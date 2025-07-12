@@ -37,10 +37,29 @@
                 transform: translateY(-5px);
                 box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
             }
+            .contributor-item {
+                display: flex;
+                align-items: center;
+                padding: 0.5rem 1rem;
+                border-radius: 0.5rem;
+                transition: all 0.2s ease;
+            }
+            .contributor-item:hover {
+                background-color: rgba(26, 95, 180, 0.05);
+                transform: translateX(4px);
+            }
+            .contributor-name {
+                font-weight: 600;
+                margin-right: 0.5rem;
+            }
+            .contributor-handle {
+                color: #1a5fb4;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
-<body class="bg-neutral"> <!-- 移除 text-dark，让文字使用默认颜色 -->
+<body class="bg-neutral">
     <!-- 顶部横幅 -->
     <header class="bg-gradient-to-r from-primary to-dark text-white py-12 px-4 md:px-8">
         <div class="max-w-5xl mx-auto text-center pt-12">
@@ -120,26 +139,53 @@
             </div>
         </section>
 
-        <!-- 注册与使用区 -->
+        <!-- 接入方法和咨询指引区合并 -->
         <section class="mb-16">
             <div class="bg-light rounded-2xl shadow-lg p-6 md:p-8 card-hover">
                 <h2 class="text-2xl font-bold mb-6 flex items-center">
-                    <i class="fa fa-key text-primary mr-3"></i>注册账号，生成令牌
+                    <i class="fa fa-plug text-primary mr-3"></i>接入方法与咨询指引
                 </h2>
-                <div class="space-y-4">
+                
+                <!-- 接入方法 -->
+                <div class="space-y-4 mb-8">
                     <div class="flex items-start">
                         <div class="bg-primary/10 p-2 rounded-full mt-1 mr-4">
                             <i class="fa fa-code text-primary"></i>
                         </div>
-                        <div>
+                        <div class="flex-1">
                             <p class="font-semibold">API 地址</p>
-                            <code class="bg-gray-100 px-3 py-1 rounded text-sm">https://gemini.beijixingxing.com/v1</code>
+                            <code class="bg-gray-100 px-3 py-1 rounded text-sm break-all">
+                                https://gemini.beijixingxing.com/v1
+                            </code>
                         </div>
                     </div>
+                    
+                    <div class="mt-6 p-4 bg-primary/5 rounded-xl border-l-4 border-primary">
+                        <p class="font-medium">使用步骤：</p>
+                        <ol class="list-decimal list-inside mt-2 space-y-1 text-sm">
+                            <li>注册星星人民公益站获取令牌（API密钥）</li>
+                            <li>在SillyTavern中选择OpenAI兼容模式</li>
+                            <li>填入上述API地址和您的令牌（API密钥）</li>
+                            <li>开始使用公益服务</li>
+                        </ol>
+                    </div>
                 </div>
-                <div class="mt-6 p-4 bg-primary/5 rounded-xl border-l-4 border-primary">
-                    <p class="font-medium">使用方法：</p>
-                    <p class="mt-1 text-sm">酒馆选择openAI兼容模式，选择聊天补全模式，填写API地址和key密钥即可连接使用。</p>
+                
+                <!-- 咨询指引 -->
+                <div class="border-t border-gray-200 pt-6">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fa fa-comments text-secondary mr-3"></i>公益站相关问题咨询
+                    </h3>
+                    <p class="mb-4">如您有任何关于公益站的问题或建议，请在类脑星星人民公益站帖内咨询。</p>
+                    
+                    <div class="bg-white p-4 rounded-lg border border-gray-200">
+                        <a href="https://discord.com/channels/1134557553011998840/1390629167527235677/1392343336895123556" 
+                           target="_blank" 
+                           class="inline-flex items-center text-primary hover:underline font-medium">
+                            <i class="fa fa-external-link mr-2"></i>
+                            discord类脑社区-教程区-星星人民公益站帖
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -150,41 +196,42 @@
                 <h2 class="text-2xl font-bold mb-6 flex items-center">
                     <i class="fa fa-heart text-secondary mr-3"></i>致谢每一位贡献者
                 </h2>
-                <p class="mb-6">我们向以下无私奉献支持公益事业的朋友们表示诚挚的感谢（排名不分先后）：</p>
+                <p class="text-slate-600 mb-6">我们向以下无私奉献支持公益事业的朋友们表示诚挚的感谢（排名不分先后）：</p>
                 
-                <div class="flex flex-wrap gap-3 mb-8">
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@chlo.jpg</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@yuki028833</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@999729uo.</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@glow04</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@violet_zi</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@99527_05146_17672</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@leilan1314520</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@alexblues97</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@poipoiwa</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@kk1189_61801</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@soliumbra</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@happy_first</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@rabbitcake_owo</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@yqbb_</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@lubiliuyuzhou</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@moya0488</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@morgana_beatrice</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@junying172</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@zzzzzzzzzz0751</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@javion9172</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@euruka0831</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@show_09526</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@molilili1</span>
-                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@julianne0725</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
+                    <div class="contributor-item"><span class="contributor-name">Chloe</span><span class="contributor-handle">chlo.jpg</span></div>
+                    <div class="contributor-item"><span class="contributor-name">AlexBlues</span><span class="contributor-handle">alexblues97</span></div>
+                    <div class="contributor-item"><span class="contributor-name">Flora Kilpatrick</span><span class="contributor-handle">lubiliuyuzhou</span></div>
+                    <div class="contributor-item"><span class="contributor-name">YUKI</span><span class="contributor-handle">yuki028833</span></div>
+                    <div class="contributor-item"><span class="contributor-name">poipoiwa</span><span class="contributor-handle">poipoiwa</span></div>
+                    <div class="contributor-item"><span class="contributor-name">moyA</span><span class="contributor-handle">moya0488</span></div>
+                    <div class="contributor-item"><span class="contributor-name">ming</span><span class="contributor-handle">999729uo.</span></div>
+                    <div class="contributor-item"><span class="contributor-name">ᴷᴷᵀˢᴺ(橘狐)</span><span class="contributor-handle">kk1189_61801</span></div>
+                    <div class="contributor-item"><span class="contributor-name">莫莫尔・贝阿朵莉切</span><span class="contributor-handle">morgana_beatrice</span></div>
+                    <div class="contributor-item"><span class="contributor-name">𝑮𝒍𝒐𝒘☀</span><span class="contributor-handle">glow04</span></div>
+                    <div class="contributor-item"><span class="contributor-name">SoliUmbra</span><span class="contributor-handle">soliumbra</span></div>
+                    <div class="contributor-item"><span class="contributor-name">均影</span><span class="contributor-handle">junying172</span></div>
+                    <div class="contributor-item"><span class="contributor-name">wei</span><span class="contributor-handle">violet_zi</span></div>
+                    <div class="contributor-item"><span class="contributor-name">kingfall-ab-test</span><span class="contributor-handle">happy_first</span></div>
+                    <div class="contributor-item"><span class="contributor-name">尽心见性</span><span class="contributor-handle">99527_05146...</span></div>
+                    <div class="contributor-item"><span class="contributor-name">兔子蛋糕</span><span class="contributor-handle">rabbitcake_owo</span></div>
+                    <div class="contributor-item"><span class="contributor-name">秃头的后宫梦</span><span class="contributor-handle">javion9172</span></div>
+                    <div class="contributor-item"><span class="contributor-name">尅尅</span><span class="contributor-handle">leilan1314520</span></div>
+                    <div class="contributor-item"><span class="contributor-name">YQBB (👊🌀🔥)</span><span class="contributor-handle">yqbb_</span></div>
+                    <div class="contributor-item"><span class="contributor-name">Euruka</span><span class="contributor-handle">euruka0831</span></div>
+                    <div class="contributor-item"><span class="contributor-name">烁寒喵</span><span class="contributor-handle">show_09526</span></div>
+                    <div class="contributor-item"><span class="contributor-name">molilili</span><span class="contributor-handle">molilili1</span></div>
+                    <div class="contributor-item"><span class="contributor-name">Jill🍸</span><span class="contributor-handle">julianne0725</span></div>
+                    <div class="contributor-item"><span class="contributor-name">DEMO</span><span class="contributor-handle">cryforme2234</span></div>
+                    <div class="contributor-item"><span class="contributor-name">taishijiaxi</span><span class="contributor-handle">taishijiaxi_09043</span></div>
                 </div>
 
                 <!-- 加入我们 -->
-                <div class="bg-primary/5 rounded-xl p-6 border border-primary/20">
+                <div class="bg-primary/5 rounded-xl p-6 border border-primary/20 border-2 border-red-500">
                     <h3 class="font-bold text-xl mb-4 flex items-center">
                         <i class="fa fa-users text-primary mr-2"></i>汇聚力量，共建共享！
                     </h3>
-                    <p class="mb-4">我们热切欢迎更多怀抱共同理想、愿意为人民服务的朋友提供 <strong>Gemini-API-KEY</strong>，加入到公益项目中来，一同建设更美好的社群服务！</p>
+                    <p class="mb-4">我们热切欢迎更多怀抱共同理想、愿意为人民服务的朋友提供 <strong>Gemini-Api-Key</strong>，加入到公益项目中来，一同建设更美好的社群服务！</p>
                     
                     <div class="mb-4">
                         <p class="font-medium mb-2">批量获取key：</p>
@@ -197,6 +244,23 @@
                             </a>
                         </div>
                         <p class="text-sm text-gray-600 mt-2">一个账号最多可领取50个key</p>
+                    </div>
+                    
+                    <!-- 捐赠联系方式 -->
+                    <div class="mt-6">
+                        <p class="font-medium mb-2">捐赠联系方式：</p>
+                        <div class="flex flex-col space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa fa-discord text-primary text-xl"></i>
+                                <span class="font-medium">Discord：</span>
+                                <span class="text-gray-700">beijixx_90909</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fa fa-envelope text-primary text-xl"></i>
+                                <span class="font-medium">邮箱：</span>
+                                <span class="text-gray-700">yunxi815@gmail.com</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
