@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星星人民公益站 — 人民的AI，为人民服务！</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            mode: 'jit',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a5fb4', // 主色调：信任蓝
+                        secondary: '#e63946', // 强调色：警示红
+                        neutral: '#f1faee', // 背景色：浅灰蓝
+                        dark: '#1d3557', // 深色文本
+                        light: '#f8f9fa', // 卡片背景
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark">
+    <!-- 顶部横幅 -->
+    <header class="bg-gradient-to-r from-primary to-dark text-white py-12 px-4 md:px-8">
+        <div class="max-w-5xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-shadow">
+                <i class="fa fa-star text-yellow-300 mr-2"></i>星星人民公益站
+            </h1>
+            <p class="text-xl md:text-2xl opacity-90">人民的AI，为人民服务！</p>
+            <div class="mt-8 inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
+                <p class="text-sm md:text-base">遵循马克思主义教导，让先进生产力工具回归人民</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="max-w-5xl mx-auto px-4 py-12">
+        <!-- 注册与使用区 -->
+        <section class="mb-16">
+            <div class="bg-light rounded-2xl shadow-lg p-6 md:p-8 card-hover">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fa fa-key text-primary mr-3"></i>注册账号，生成令牌
+                </h2>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-2 rounded-full mt-1 mr-4">
+                            <i class="fa fa-link text-primary"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold">公益站网址</p>
+                            <a href="https://gemini.beijixingxing.com" target="_blank" class="text-primary hover:underline break-all">
+                                https://gemini.beijixingxing.com
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-2 rounded-full mt-1 mr-4">
+                            <i class="fa fa-code text-primary"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold">API 地址</p>
+                            <code class="bg-gray-100 px-3 py-1 rounded text-sm">https://gemini.beijixingxing.com/v1</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 p-4 bg-primary/5 rounded-xl border-l-4 border-primary">
+                    <p class="font-medium">使用方法：</p>
+                    <p class="mt-1 text-sm">酒馆选择openAI兼容模式，选择聊天补全模式，填写API地址和key密钥即可连接使用。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 社区公约区 -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fa fa-book text-primary mr-3"></i>社区公约与使用准则
+            </h2>
+            <p class="text-gray-600 mb-6">为了维护服务的持续与稳定，确保资源为大家所用，请所有使用者共同遵守以下公约：</p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- 共同维护 -->
+                <div class="bg-light rounded-xl shadow p-6 card-hover">
+                    <div class="text-green-500 text-3xl mb-4">
+                        <i class="fa fa-check-circle"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-3">共同维护，发扬共享精神</h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right mt-1 mr-2"></i>
+                            <span>本站资源是社群共同的财富，请大家自觉维护，合理使用</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right mt-1 mr-2"></i>
+                            <span>访问密钥将根据实际情况不定期更换，请留意最新通知</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 行为规范 -->
+                <div class="bg-light rounded-xl shadow p-6 card-hover">
+                    <div class="text-yellow-500 text-3xl mb-4">
+                        <i class="fa fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-3">行为规范</h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right mt-1 mr-2"></i>
+                            <span>严禁将本公益API接入任何以盈利为目的的商业软件</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right mt-1 mr-2"></i>
+                            <span>API密钥严禁任何形式的倒卖或私自外传</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 特别提醒 -->
+                <div class="bg-light rounded-xl shadow p-6 card-hover">
+                    <div class="text-secondary text-3xl mb-4">
+                        <i class="fa fa-ban"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-3">特别提醒</h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right mt-1 mr-2"></i>
+                            <span>严禁将本站API用于沉浸式翻译等会产生大量高并发请求的程序</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right mt-1 mr-2"></i>
+                            <span>此类行为极易导致Key被封禁，严重影响所有用户的正常使用</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 致谢区 -->
+        <section class="mb-16">
+            <div class="bg-light rounded-2xl shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fa fa-heart text-secondary mr-3"></i>致谢每一位贡献者
+                </h2>
+                <p class="mb-6">我们向以下无私奉献支持公益事业的朋友们表示诚挚的感谢（排名不分先后）：</p>
+                
+                <div class="flex flex-wrap gap-3 mb-8">
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@chlo.jpg</span>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@yuki028833</span>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@999729uo.</span>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@glow04</span>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@violet_zi</span>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@99527_05146_17672</span>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@leilan1314520</span>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@alexblues97</span>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@poipoiwa</span>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@kk1189_61801</span>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@soliumbra</span>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@happy_first</span>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@rabbitcake_owo</span>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@yqbb_</span>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">@lubiliuyuzhou</span>
+                </div>
+
+                <!-- 加入我们 -->
+                <div class="bg-primary/5 rounded-xl p-6 border border-primary/20">
+                    <h3 class="font-bold text-xl mb-4 flex items-center">
+                        <i class="fa fa-users text-primary mr-2"></i>汇聚力量，共建共享！
+                    </h3>
+                    <p class="mb-4">我们热切欢迎更多怀抱共同理想、愿意为人民服务的朋友提供 <strong>Gemini Key</strong>，加入到公益项目中来，一同建设更美好的社群服务！</p>
+                    
+                    <div class="mb-4">
+                        <p class="font-medium mb-2">批量获取key：</p>
+                        <div class="space-y-2">
+                            <a href="https://discord.com/channels/1134557553011998840/1388829444881256488" target="_blank" class="text-primary hover:underline text-sm block break-all">
+                                https://discord.com/channels/1134557553011998840/1388829444881256488
+                            </a>
+                            <a href="https://discord.com/channels/1134557553011998840/1382401165756469410" target="_blank" class="text-primary hover:underline text-sm block break-all">
+                                https://discord.com/channels/1134557553011998840/1382401165756469410
+                            </a>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-2">一个账号最多可领取50个key</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 导师教诲 -->
+        <section>
+            <div class="bg-dark text-white rounded-2xl shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fa fa-quote-left mr-3 opacity-70"></i>导师的教诲，指引我们前进的方向
+                </h2>
+                <blockquote class="text-xl md:text-2xl italic border-l-4 border-yellow-400 pl-6 py-2 mb-4">
+                    "生产力归人民所有时，技术才能消灭异化。"
+                </blockquote>
+                <p class="text-right opacity-80">— 卡尔·马克思《德意志意识形态》</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white/70 py-8 px-4 mt-12">
+        <div class="max-w-5xl mx-auto text-center text-sm">
+            <p>星星人民公益站 © 2024 - 人民的AI，为人民服务</p>
+            <p class="mt-2">遵循马克思主义教导，打破技术垄断，让先进生产力服务于最广大劳动人民</p>
+        </div>
+    </footer>
+</body>
+</html>
