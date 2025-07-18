@@ -40,9 +40,12 @@
             .contributor-item {
                 display: flex;
                 align-items: center;
-                padding: 0.5rem 1rem;
+                justify-content: center; /* 水平居中 */
+                padding: 0.75rem 1rem; /* 增加内边距 */
                 border-radius: 0.5rem;
                 transition: all 0.2s ease;
+                background-color: #f8f9fa; /* 添加背景色 */
+                border: 1px solid #e9ecef; /* 添加边框 */
             }
             .contributor-item:hover {
                 background-color: rgba(26, 95, 180, 0.05);
@@ -50,7 +53,8 @@
             }
             .contributor-name {
                 font-weight: 600;
-                margin-right: 0.5rem;
+                font-size: 1rem; /* 调整字体大小 */
+                color: #343a40; /* 调整字体颜色 */
             }
             .contributor-handle {
                 color: #1a5fb4;
@@ -148,50 +152,53 @@
                 </h2>
                 <p class="text-slate-600 mb-6">我们向以下无私奉献支持公益事业的朋友们表示诚挚的感谢（排名不分先后）：</p>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
-                    <div class="contributor-item"><span class="contributor-name">Chloe</span><span class="contributor-handle">chlo.jpg</span></div>
-                    <div class="contributor-item"><span class="contributor-name">AlexBlues</span><span class="contributor-handle">alexblues97</span></div>
-                    <div class="contributor-item"><span class="contributor-name">Flora Kilpatrick</span><span class="contributor-handle">lubiliuyuzhou</span></div>
-                    <div class="contributor-item"><span class="contributor-name">YUKI</span><span class="contributor-handle">yuki028833</span></div>
-                    <div class="contributor-item"><span class="contributor-name">poipoiwa</span><span class="contributor-handle">poipoiwa</span></div>
-                    <div class="contributor-item"><span class="contributor-name">moyA</span><span class="contributor-handle">moya0488</span></div>
-                    <div class="contributor-item"><span class="contributor-name">ming</span><span class="contributor-handle">999729uo.</span></div>
-                    <div class="contributor-item"><span class="contributor-name">ᴷᴷᵀˢᴺ(橘狐)</span><span class="contributor-handle">kk1189_61801</span></div>
-                    <div class="contributor-item"><span class="contributor-name">莫莫尔・贝阿朵莉切</span><span class="contributor-handle">morgana_beatrice</span></div>
-                    <div class="contributor-item"><span class="contributor-name">𝑮𝒍𝒐𝒘☀</span><span class="contributor-handle">glow04</span></div>
-                    <div class="contributor-item"><span class="contributor-name">SoliUmbra</span><span class="contributor-handle">soliumbra</span></div>
-                    <div class="contributor-item"><span class="contributor-name">均影</span><span class="contributor-handle">junying172</span></div>
-                    <div class="contributor-item"><span class="contributor-name">wei</span><span class="contributor-handle">violet_zi</span></div>
-                    <div class="contributor-item"><span class="contributor-name">kingfall-ab-test</span><span class="contributor-handle">happy_first</span></div>
-                    <div class="contributor-item"><span class="contributor-name">尽心见性</span><span class="contributor-handle">99527_05146...</span></div>
-                    <div class="contributor-item"><span class="contributor-name">兔子蛋糕</span><span class="contributor-handle">rabbitcake_owo</span></div>
-                    <div class="contributor-item"><span class="contributor-name">秃头的后宫梦</span><span class="contributor-handle">javion9172</span></div>
-                    <div class="contributor-item"><span class="contributor-name">尅尅</span><span class="contributor-handle">leilan1314520</span></div>
-                    <div class="contributor-item"><span class="contributor-name">YQBB (👊🌀🔥)</span><span class="contributor-handle">yqbb_</span></div>
-                    <div class="contributor-item"><span class="contributor-name">Euruka</span><span class="contributor-handle">euruka0831</span></div>
-                    <div class="contributor-item"><span class="contributor-name">烁寒喵</span><span class="contributor-handle">show_09526</span></div>
-                    <div class="contributor-item"><span class="contributor-name">molilili</span><span class="contributor-handle">molilili1</span></div>
-                    <div class="contributor-item"><span class="contributor-name">Jill🍸</span><span class="contributor-handle">julianne0725</span></div>
-                    <div class="contributor-item"><span class="contributor-name">DEMO</span><span class="contributor-handle">cryforme2234</span></div>
-                    <div class="contributor-item"><span class="contributor-name">taishijiaxi</span><span class="contributor-handle">taishijiaxi_09043</span></div>
-                    <div class="contributor-item"><span class="contributor-name">EterNights</span><span class="contributor-handle">eternights7402</span></div>                    
-                    <div class="contributor-item"><span class="contributor-name">愿/怨(参加情感共鸣杯喵)</span><span class="contributor-handle">yuan_yuan_1314</span></div> 
-                    <div class="contributor-item"><span class="contributor-name">叶子</span><span class="contributor-handle">a457270346</span></div> 
-                    <div class="contributor-item"><span class="contributor-name">DSLZL</span><span class="contributor-handle">dslzl</span></div> 
-                    <div class="contributor-item"><span class="contributor-name">shushu</span><span class="contributor-handle">487876353</span></div> 
-                    <div class="contributor-item"><span class="contributor-name">只想喝百事可乐</span><span class="contributor-handle">573450701</span></div> 
-                    <div class="contributor-item"><span class="contributor-name">max</span><span class="contributor-handle">bubbly_mango_34105</span></div> 
-                    <div class="contributor-item"><span class="contributor-name">？</span><span class="contributor-handle">3176246521</span></div> 
-                    <div class="contributor-item"><span class="contributor-name">loren</span><span class="contributor-handle">loren006863</span></div> 
-                    <div class="contributor-item"><span class="contributor-name">别柒雪</span><span class="contributor-handle">bieqixue</span></div> 
-                    <div class="contributor-item"><span class="contributor-name">我是不吃大饼</span><span class="contributor-handle">woshibuchidabing</span></div> 
-                    <div class="contributor-item"><span class="contributor-name">脑洞洞洞</span><span class="contributor-handle">busy_unicorn_53126</span></div> 
-                    <div class="contributor-item"><span class="contributor-name">教头子</span><span class="contributor-handle">jiaotouzi_11625</span></div> 
-                    <div class="contributor-item"><span class="contributor-name">mengmeng</span><span class="contributor-handle">mengmeng_87558_32708</span></div> 
-                    <div class="contributor-item"><span class="contributor-name">星悠</span><span class="contributor-handle">ygg0865</span></div> 
-                    <div class="contributor-item"><span class="contributor-name">LingM</span><span class="contributor-handle">liyasi_</span></div> 
-                    <div class="contributor-item"><span class="contributor-name">HKCF39</span><span class="contributor-handle">hkcf39</span></div> 
-                    <div class="contributor-item"><span class="contributor-name">ji_yuan233</span><span class="contributor-handle">jiyuan233</span></div> 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                    <div class="contributor-item"><span class="contributor-name">Chloe</span></div>
+                    <div class="contributor-item"><span class="contributor-name">AlexBlues</span></div>
+                    <div class="contributor-item"><span class="contributor-name">Flora Kilpatrick</span></div>
+                    <div class="contributor-item"><span class="contributor-name">YUKI</span></div>
+                    <div class="contributor-item"><span class="contributor-name">poipoiwa</span></div>
+                    <div class="contributor-item"><span class="contributor-name">moyA</span></div>
+                    <div class="contributor-item"><span class="contributor-name">ming</span></div>
+                    <div class="contributor-item"><span class="contributor-name">ᴷᴷᵀˢᴺ(橘狐)</span></div>
+                    <div class="contributor-item"><span class="contributor-name">莫莫尔・贝阿朵莉切</span></div>
+                    <div class="contributor-item"><span class="contributor-name">𝑮𝒍𝒐𝒘☀</span></div>
+                    <div class="contributor-item"><span class="contributor-name">SoliUmbra</span></div>
+                    <div class="contributor-item"><span class="contributor-name">均影</span></div>
+                    <div class="contributor-item"><span class="contributor-name">wei</span></div>
+                    <div class="contributor-item"><span class="contributor-name">kingfall-ab-test</span></div>
+                    <div class="contributor-item"><span class="contributor-name">尽心见性</span></div>
+                    <div class="contributor-item"><span class="contributor-name">兔子蛋糕</span></div>
+                    <div class="contributor-item"><span class="contributor-name">秃头的后宫梦</span></div>
+                    <div class="contributor-item"><span class="contributor-name">尅尅</span></div>
+                    <div class="contributor-item"><span class="contributor-name">YQBB (👊🌀🔥)</span></div>
+                    <div class="contributor-item"><span class="contributor-name">Euruka</span></div>
+                    <div class="contributor-item"><span class="contributor-name">烁寒喵</span></div>
+                    <div class="contributor-item"><span class="contributor-name">molilili</span></div>
+                    <div class="contributor-item"><span class="contributor-name">Jill🍸</span></div>
+                    <div class="contributor-item"><span class="contributor-name">DEMO</span></div>
+                    <div class="contributor-item"><span class="contributor-name">taishijiaxi</span></div>
+                    <div class="contributor-item"><span class="contributor-name">EterNights</span></div>
+                    <div class="contributor-item"><span class="contributor-name">愿/怨(参加情感共鸣杯喵)</span></div>
+                    <div class="contributor-item"><span class="contributor-name">叶子</span></div>
+                    <div class="contributor-item"><span class="contributor-name">DSLZL</span></div>
+                    <div class="contributor-item"><span class="contributor-name">shushu</span></div>
+                    <div class="contributor-item"><span class="contributor-name">只想喝百事可乐</span></div>
+                    <div class="contributor-item"><span class="contributor-name">max</span></div>
+                    <div class="contributor-item"><span class="contributor-name">？</span></div>
+                    <div class="contributor-item"><span class="contributor-name">loren</span></div>
+                    <div class="contributor-item"><span class="contributor-name">别柒雪</span></div>
+                    <div class="contributor-item"><span class="contributor-name">我是不吃大饼</span></div>
+                    <div class="contributor-item"><span class="contributor-name">脑洞洞洞</span></div>
+                    <div class="contributor-item"><span class="contributor-name">教头子</span></div>
+                    <div class="contributor-item"><span class="contributor-name">mengmeng</span></div>
+                    <div class="contributor-item"><span class="contributor-name">星悠</span></div>
+                    <div class="contributor-item"><span class="contributor-name">LingM</span></div>
+                    <div class="contributor-item"><span class="contributor-name">HKCF39</span></div>
+                    <div class="contributor-item"><span class="contributor-name">ji_yuan233</span></div>
+                    <div class="contributor-item"><span class="contributor-name">rdesk</span></div>
+                    <div class="contributor-item"><span class="contributor-name">M0RIM1</span></div>
+                    <div class="contributor-item"><span class="contributor-name">日死</span></div>
 
                 </div>
 
