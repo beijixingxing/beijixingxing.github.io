@@ -185,7 +185,7 @@
                     <div class="contributor-item"><span class="contributor-name">shushu</span></div>
                     <div class="contributor-item"><span class="contributor-name">只想喝百事可乐</span></div>
                     <div class="contributor-item"><span class="contributor-name">max</span></div>
-                    <div class="contributor-item"><span class="contributor-name">？</span></div>
+                    <div class="contributor-item"><span class="contributor-name">Ronin.F</span></div>
                     <div class="contributor-item"><span class="contributor-name">loren</span></div>
                     <div class="contributor-item"><span class="contributor-name">别柒雪</span></div>
                     <div class="contributor-item"><span class="contributor-name">我是不吃大饼</span></div>
@@ -199,6 +199,20 @@
                     <div class="contributor-item"><span class="contributor-name">rdesk</span></div>
                     <div class="contributor-item"><span class="contributor-name">M0RIM1</span></div>
                     <div class="contributor-item"><span class="contributor-name">日死</span></div>
+                    <div class="contributor-item"><span class="contributor-name">DeadDARK</span></div>
+                    <div class="contributor-item"><span class="contributor-name">无妄</span></div>
+                    <div class="contributor-item"><span class="contributor-name">11</span></div>
+                    <div class="contributor-item"><span class="contributor-name">金针误入桃花蕊</span></div>
+                    <div class="contributor-item"><span class="contributor-name">yuki</span></div>
+                    <div class="contributor-item"><span class="contributor-name">Onion</span></div>
+                    <div class="contributor-item"><span class="contributor-name">颖子</span></div>
+                    <div class="contributor-item"><span class="contributor-name">光</span></div>
+                    <div class="contributor-item"><span class="contributor-name">玖</span></div>
+                    <div class="contributor-item"><span class="contributor-name">快走我空大了</span></div>
+                    <div class="contributor-item"><span class="contributor-name">咕咕固</span></div>
+                    <div class="contributor-item"><span class="contributor-name">买一送一</span></div>
+                    <div class="contributor-item"><span class="contributor-name">Ailing</span></div>
+                    <div class="contributor-item"><span class="contributor-name">后藤</span></div>
 
                 </div>
 
@@ -207,7 +221,15 @@
                     <h3 class="font-bold text-xl mb-4 flex items-center">
                         <i class="fa fa-users text-primary mr-2"></i>汇聚力量，共建共享！
                     </h3>
-                    <p class="mb-4">我们热切欢迎更多怀抱共同理想、愿意为人民服务的朋友提供 <strong>Gemini-Api-Key</strong>，加入到公益项目中来，一同建设更美好的社群服务！</p>
+
+                    <div class="mt-2 mb-6 text-sm text-red-800 flex items-start p-4 bg-red-100 rounded-lg">
+                        <i class="fa fa-info-circle text-primary mr-3 mt-1 flex-shrink-0"></i>
+                        <div>
+                            <strong>特别声明：</strong>本站坚守公益原则，对所有用户一视同仁。我们不接受任何以获取特殊待遇为目的的捐赠，感谢您的理解与支持。
+                        </div>
+                    </div>
+                    
+                    <p class="mb-4">我们热切欢迎更多怀抱共同理想、愿意为人民服务的朋友提供 <strong>Gemini-Api-Key等捐赠</strong>，一同加入到公益项目中来，共同建设更美好的公益事业！</p>
                     
                     <div class="mb-4">
                         <p class="font-medium mb-2">批量获取key：</p>
@@ -229,12 +251,20 @@
                             <div class="flex items-center space-x-3">
                                 <i class="fa fa-discord text-primary text-xl"></i>
                                 <span class="font-medium">Discord：</span>
-                                <span class="text-gray-700">beijixx_90909</span>
+                                <span id="discord-username" class="text-gray-700">beijixx_90909</span>
+                                <button onclick="copyDiscordUsername()" class="ml-2 px-2 py-1 text-xs font-semibold text-white bg-primary rounded hover:bg-red-700 transition-colors">复制</button>
                             </div>
                             <div class="flex items-center space-x-3">
                                 <i class="fa fa-envelope text-primary text-xl"></i>
                                 <span class="font-medium">邮箱：</span>
-                                <span class="text-gray-700">yunxi815@gmail.com</span>
+                                <a href="mailto:beijixingxing02@gmail.com" class="text-primary hover:underline font-medium">点击发送邮件</a>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fa fa-bolt text-primary text-xl"></i>
+                                <span class="font-medium">爱发电：</span>
+                                <a href="https://afdian.com/a/beijixingxing" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium">
+                                    点击支持
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -321,5 +351,17 @@
             <p class="mt-2">遵循马克思主义教导，打破技术垄断，让先进生产力服务于最广大劳动人民</p>
         </div>
     </footer>
+
+    <script>
+        function copyDiscordUsername() {
+            const username = document.getElementById('discord-username').innerText;
+            navigator.clipboard.writeText(username).then(() => {
+                alert('Discord 用户名已复制到剪贴板！');
+            }, (err) => {
+                console.error('无法复制文本: ', err);
+                alert('复制失败，请手动复制。');
+            });
+        }
+    </script>
 </body>
 </html>
