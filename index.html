@@ -3,30 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="星星人民公益站 - 人民的AI，依靠人民、为人民！遵循马克思主义教导，让先进生产力工具回归人民。">
+    <meta name="keywords" content="人民AI,公益AI,星星人民,Gemini API,免费AI,马克思主义,人民服务">
+    <meta name="author" content="星星人民公益站">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#e63946">
+    <meta name="robots" content="index, follow">
     <title>星星人民公益站 — 人民的AI，依靠人民、为人民！</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            mode: 'jit',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#e63946', // 主色调：信任红
-                        secondary: '#e63946', // 强调色：警示红
-                        neutral: '#f1faee', // 背景色：浅灰蓝
-                        dark: '#1d3557', // 深色文本
-                        light: '#f8f9fa', // 卡片背景
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                }
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gemini.beijixingxing.com">
+    <meta property="og:title" content="星星人民公益站 — 人民的AI，依靠人民、为人民！">
+    <meta property="og:description" content="遵循马克思主义教导，让先进生产力工具回归人民。">
+    <meta property="og:image" content="https://github.beijixingxing.com/new_pages/images/公益站.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gemini.beijixingxing.com">
+    <meta property="twitter:title" content="星星人民公益站 — 人民的AI，依靠人民、为人民！">
+    <meta property="twitter:description" content="遵循马克思主义教导，让先进生产力工具回归人民。">
+    <meta property="twitter:image" content="https://github.beijixingxing.com/new_pages/images/公益站.png">
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" as="style">
+    
+    <!-- 关键CSS内联 -->
+    <style>
+        /* 关键样式内联以避免渲染阻塞 */
+        body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+        .loading { background: linear-gradient(90deg, #e63946, #d63447); color: white; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .loading-text { font-size: 1.5rem; font-weight: bold; }
+        
+        /* 预加载关键布局样式 */
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+        .flex { display: flex; }
+        .grid { display: grid; }
+        .hidden { display: none; }
+        .text-center { text-align: center; }
+        .text-white { color: white; }
+        .bg-red-600 { background-color: #dc2626; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+        .p-6 { padding: 1.5rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .font-bold { font-weight: 700; }
+        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+        
+        /* 无障碍访问样式 */
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+        
+        /* 移动端复制优化 */
+        .select-all { -webkit-user-select: all; -moz-user-select: all; -ms-user-select: all; user-select: all; }
+        .touch-manipulation { touch-action: manipulation; }
+        
+        /* 响应式网格预载 */
+        @media (min-width: 640px) { .sm\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        @media (min-width: 768px) { .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+        @media (min-width: 1024px) { .lg\:grid-cols-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); } }
+    </style>
+    
+    <!-- 异步加载外部CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet"></noscript>
+    
+    <!-- 延迟加载TailwindCSS -->
+<script>
+    // 延迟加载TailwindCSS，带错误处理
+    function loadTailwind() {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.tailwindcss.com';
+        script.async = true;
+        script.onload = function() {
+            if (window.tailwind) {
+                tailwind.config = {
+                    mode: 'jit',
+                    theme: {
+                        extend: {
+                            colors: {
+                                primary: '#e63946',
+                                secondary: '#e63946',
+                                neutral: '#f1faee',
+                                dark: '#1d3557',
+                                light: '#f8f9fa',
+                            },
+                            fontFamily: {
+                                sans: ['Inter', 'system-ui', 'sans-serif'],
+                            },
+                        }
+                    }
+                };
             }
+            // 首次加载时，隐藏加载屏并尝试滚动
+            hideLoadingScreenAndScroll();
+        };
+        script.onerror = function() {
+            console.warn('TailwindCSS加载失败，使用基础样式');
+            hideLoadingScreenAndScroll();
+        };
+        document.head.appendChild(script);
+    }
+  
+    // --- 终极跨页锚点滚动解决方案 (V4 - 最终修正) ---
+    function attemptScrollToAnchor() {
+        const hash = window.location.hash;
+        if (!hash || hash.length <= 1) return;
+
+        let attempts = 0;
+        const maxAttempts = 30; // 增加尝试次数至3秒
+        const interval = 100;
+
+        const scroller = setInterval(() => {
+            try {
+                const targetElement = document.querySelector(hash);
+                if (targetElement) {
+                    // 确保元素在视觉上是可交互的
+                    if (targetElement.offsetParent !== null) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        clearInterval(scroller);
+                    } else {
+                        // 元素存在但不可见，继续等待
+                        attempts++;
+                    }
+                } else {
+                    attempts++;
+                }
+
+                if (attempts > maxAttempts) {
+                    clearInterval(scroller);
+                    console.warn(`锚点 '${hash}' 在超时后仍未找到或不可见。`);
+                }
+            } catch (e) {
+                console.error("无效的锚点选择器:", hash);
+                clearInterval(scroller);
+            }
+        }, interval);
+    }
+
+    // 仅用于首次加载的函数
+    function hideLoadingScreenAndScroll() {
+        const loadingScreen = document.getElementById('loading-screen');
+        const mainContent = document.getElementById('main-content');
+        if (loadingScreen && loadingScreen.style.display !== 'none') {
+            loadingScreen.style.display = 'none';
+            mainContent.style.display = 'block';
+
+            // 在下一帧执行滚动，确保DOM渲染完成
+            requestAnimationFrame(attemptScrollToAnchor);
         }
-    </script>
+    }
+
+    // 监听DOM加载完成事件 (用于首次加载)
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadTailwind);
+    } else {
+        loadTailwind();
+    }
+
+    // 关键修正：监听 pageshow 事件，处理从 bfcache 恢复的场景
+    window.addEventListener('pageshow', (event) => {
+        // event.persisted 为 true 表示页面是从 bfcache 中加载的
+        if (event.persisted) {
+            // 页面从 bfcache 恢复时，内容已显示，加载屏已隐藏。
+            // 我们唯一需要做的就是无条件地、强制地再次尝试滚动。
+            // 直接调用 attemptScrollToAnchor，绕过所有判断。
+            console.log('Page restored from bfcache. Forcing scroll attempt.');
+            requestAnimationFrame(attemptScrollToAnchor);
+        }
+    });
+
+    // 超时保护：仅用于首次加载，防止加载屏卡死
+    setTimeout(hideLoadingScreenAndScroll, 5000);
+</script>
     <style type="text/tailwindcss">
         @layer utilities {
+            .nav-donate-btn {
+                animation: pulse-red 2s infinite;
+                transition: transform 0.3s ease; /* 添加平滑过渡 */
+            }
+            .nav-donate-btn:hover {
+                transform: scale(1.15); /* 增加悬停放大效果 */
+            }
+            @keyframes pulse-red {
+                0%, 100% {
+                    box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
+                }
+                70% {
+                    box-shadow: 0 0 0 15px rgba(230, 57, 70, 0);
+                }
+            }
             .text-shadow {
                 text-shadow: 0 2px 4px rgba(0,0,0,0.1);
             }
@@ -41,7 +207,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center; /* 水平居中 */
-                padding: 0.75rem 1rem; /* 增加内边距 */
+                padding: 0.5rem 0.125rem; /* 再次减小内边距 */
                 border-radius: 0.5rem;
                 transition: all 0.2s ease;
                 background-color: #f8f9fa; /* 添加背景色 */
@@ -60,40 +226,100 @@
                 color: #1a5fb4;
                 font-size: 0.9rem;
             }
+            .bg-with-flag {
+                position: relative;
+                overflow: hidden;
+            }
+            .bg-with-flag::after {
+                content: '🚩';
+                position: absolute;
+                bottom: -0.5rem;
+                right: -0.5rem;
+                font-size: 5rem;
+                opacity: 0.1;
+                transform: rotate(-15deg);
+                pointer-events: none;
+            }
+            
+            /* 移动端折叠功能 */
+            @media (max-width: 767px) {
+                .mobile-collapsible {
+                    display: none;
+                }
+                .mobile-toggle-btn {
+                    display: flex;
+                }
+            }
+            
+            /* 桌面端显示全部 */
+            @media (min-width: 768px) {
+                .mobile-collapsible {
+                    display: grid !important;
+                }
+                .mobile-toggle-btn {
+                    display: none;
+                }
+            }
         }
     </style>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>★</text></svg>" type="image/svg+xml">
 </head>
-<body class="bg-neutral">
+<body>
+    <!-- 加载屏幕 -->
+    <div id="loading-screen" class="loading" role="status" aria-live="polite">
+        <div class="loading-text">
+            <i style="color: #fbbf24; margin-right: 8px;" aria-hidden="true">★</i>
+            星星人民公益站加载中...
+            <span class="sr-only">页面正在加载，请稍候</span>
+        </div>
+    </div>
+    
+    <!-- 主要内容（初始隐藏） -->
+    <div id="main-content" style="display: none;" class="bg-neutral">
     <!-- 顶部横幅 -->
-    <header class="bg-gradient-to-r from-red-600 to-red-800 text-white py-12 px-4 md:px-8"> <!-- 修改背景为红色渐变 -->
-        <div class="max-w-5xl mx-auto text-center pt-12">
+    <header class="bg-gradient-to-r from-red-600 to-red-800 text-white pt-12 pb-8 px-4 md:px-8"> <!-- 修改背景为红色渐变 -->
+        <div class="max-w-7xl mx-auto text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-4 text-shadow">
-                <i class="fa fa-star text-yellow-300 mr-2"></i>星星人民公益站
+                <i class="fa fa-star text-yellow-300 mr-2" aria-hidden="true"></i>星星人民公益站
             </h1>
             <p class="text-xl md:text-2xl opacity-90">人民的AI，依靠人民、为人民！</p>
             <div class="mt-8 inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
                 <p class="text-sm md:text-base">遵循马克思主义教导，让先进生产力工具回归人民</p>
             </div>
+            
+            <!-- 导航栏 -->
+            <nav class="mt-12">
+                <div class="flex justify-center space-x-4 md:space-x-8">
+                    <a href="#tutorial-section" class="bg-white text-blue-600 hover:bg-gray-100 px-10 py-3 rounded-full font-bold transition-colors shadow-md text-base">
+                        <i class="fa fa-book mr-2"></i>使用教程
+                    </a>
+                    <a href="#donation-section" class="nav-donate-btn bg-white text-primary hover:bg-gray-100 px-10 py-3 rounded-full font-bold shadow-lg text-base">
+                        <i class="fa fa-heart mr-2"></i>捐赠
+                    </a>
+                    <a href="https://github.beijixingxing.com/new_pages/gemini_issues.html" class="bg-white text-green-600 hover:bg-gray-100 px-10 py-3 rounded-full font-bold transition-colors shadow-md text-base">
+                        <i class="fa fa-question-circle mr-2"></i>常见问题
+                    </a>
+                </div>
+            </nav>
         </div>
     </header>
 
     <!-- 主内容区 -->
-    <main class="max-w-5xl mx-auto px-4 py-12">
+    <main class="w-full pt-8">
         <!-- 社区公约区 -->
-        <section class="mb-16">
+        <section class="mb-3">
             <h2 class="text-2xl font-bold mb-6 flex items-center">
-                <i class="fa fa-book text-primary mr-3"></i>社区公约与使用准则（公益站使用教程见底部）
+                <i class="fa fa-book text-primary mr-3"></i>社区公约与使用准则
             </h2>
             <p class="text-gray-600 mb-6">为了维护服务的持续与稳定，确保资源为大家所用，请所有使用者共同遵守以下公约：</p>
 
             <div class="grid md:grid-cols-3 gap-6">
                 <!-- 共同维护 -->
-                <div class="bg-light rounded-xl shadow p-6 card-hover">
-                    <div class="text-green-500 text-3xl mb-4">
-                        <i class="fa fa-check-circle"></i>
+                <div class="bg-light rounded-xl shadow p-4 card-hover">
+                    <div class="flex items-center mb-3">
+                        <i class="fa fa-check-circle text-green-500 text-2xl mr-3"></i>
+                        <h3 class="font-bold text-base">共同维护，发扬共享精神</h3>
                     </div>
-                    <h3 class="font-bold text-lg mb-3">共同维护，发扬共享精神</h3>
                     <ul class="space-y-2 text-sm text-gray-700">
                         <li class="flex items-start">
                             <i class="fa fa-angle-right mt-1 mr-2"></i>
@@ -101,17 +327,17 @@
                         </li>
                         <li class="flex items-start">
                             <i class="fa fa-angle-right mt-1 mr-2"></i>
-                            <span>公益站网址将根据实际情况不定期更换，请留意最新通知</span>
+                            <span>公益站网址将根据使用情况调整费率，请留意使用额度。</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- 行为规范 -->
-                <div class="bg-light rounded-xl shadow p-6 card-hover">
-                    <div class="text-yellow-500 text-3xl mb-4">
-                        <i class="fa fa-exclamation-triangle"></i>
+                <div class="bg-light rounded-xl shadow p-4 card-hover">
+                    <div class="flex items-center mb-3">
+                        <i class="fa fa-exclamation-triangle text-yellow-500 text-2xl mr-3"></i>
+                        <h3 class="font-bold text-base">行为规范</h3>
                     </div>
-                    <h3 class="font-bold text-lg mb-3">行为规范</h3>
                     <ul class="space-y-2 text-sm text-gray-700">
                         <li class="flex items-start">
                             <i class="fa fa-angle-right mt-1 mr-2"></i>
@@ -125,11 +351,11 @@
                 </div>
 
                 <!-- 特别提醒 -->
-                <div class="bg-light rounded-xl shadow p-6 card-hover">
-                    <div class="text-secondary text-3xl mb-4">
-                        <i class="fa fa-ban"></i>
+                <div class="bg-light rounded-xl shadow p-4 card-hover">
+                    <div class="flex items-center mb-3">
+                        <i class="fa fa-ban text-secondary text-2xl mr-3"></i>
+                        <h3 class="font-bold text-base">特别提醒</h3>
                     </div>
-                    <h3 class="font-bold text-lg mb-3">特别提醒</h3>
                     <ul class="space-y-2 text-sm text-gray-700">
                         <li class="flex items-start">
                             <i class="fa fa-angle-right mt-1 mr-2"></i>
@@ -145,14 +371,15 @@
         </section>
 
         <!-- 致谢区 -->
-        <section class="mb-16">
-            <div class="bg-light rounded-2xl shadow-lg p-6 md:p-8">
+        <section class="mb-3">
+            <div class="bg-gradient-to-br from-red-100 to-neutral-50 rounded-2xl shadow-lg p-4 md:p-6 bg-with-flag">
                 <h2 class="text-2xl font-bold mb-6 flex items-center">
                     <i class="fa fa-heart text-secondary mr-3"></i>致谢每一位贡献者
                 </h2>
                 <p class="text-slate-600 mb-6">我们向以下无私奉献支持公益事业的朋友们表示诚挚的感谢（排名不分先后）：</p>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-0">
+                    <!-- 前18个显示的贡献者 -->
                     <div class="contributor-item"><span class="contributor-name">Chloe</span></div>
                     <div class="contributor-item"><span class="contributor-name">AlexBlues</span></div>
                     <div class="contributor-item"><span class="contributor-name">Flora Kilpatrick</span></div>
@@ -171,7 +398,11 @@
                     <div class="contributor-item"><span class="contributor-name">兔子蛋糕</span></div>
                     <div class="contributor-item"><span class="contributor-name">秃头的后宫梦</span></div>
                     <div class="contributor-item"><span class="contributor-name">尅尅</span></div>
-                    <div class="contributor-item"><span class="contributor-name">YQBB (👊🌀🔥)</span></div>
+                </div>
+                
+                <!-- 可展开/收起的剩余贡献者 -->
+                <div id="more-contributors" class="mobile-collapsible grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-0 mb-4">
+                    <div class="contributor-item"><span class="contributor-name">YQBB(👊🌀🔥)</span></div>
                     <div class="contributor-item"><span class="contributor-name">Euruka</span></div>
                     <div class="contributor-item"><span class="contributor-name">烁寒喵</span></div>
                     <div class="contributor-item"><span class="contributor-name">molilili</span></div>
@@ -179,7 +410,7 @@
                     <div class="contributor-item"><span class="contributor-name">DEMO</span></div>
                     <div class="contributor-item"><span class="contributor-name">taishijiaxi</span></div>
                     <div class="contributor-item"><span class="contributor-name">EterNights</span></div>
-                    <div class="contributor-item"><span class="contributor-name">愿/怨(参加情感共鸣杯喵)</span></div>
+                    <div class="contributor-item"><span class="contributor-name">愿/怨</span></div>
                     <div class="contributor-item"><span class="contributor-name">叶子</span></div>
                     <div class="contributor-item"><span class="contributor-name">DSLZL</span></div>
                     <div class="contributor-item"><span class="contributor-name">shushu</span></div>
@@ -213,9 +444,65 @@
                     <div class="contributor-item"><span class="contributor-name">买一送一</span></div>
                     <div class="contributor-item"><span class="contributor-name">Ailing</span></div>
                     <div class="contributor-item"><span class="contributor-name">后藤</span></div>
-
+                    <div class="contributor-item"><span class="contributor-name">wei_123.</span></div>
+                    <div class="contributor-item"><span class="contributor-name">MangoXu</span></div>
+                    <div class="contributor-item"><span class="contributor-name">Sana</span></div>
+                    <div class="contributor-item"><span class="contributor-name">soofabh</span></div>
+                    <div class="contributor-item"><span class="contributor-name">天天开心吧</span></div>
+                    <div class="contributor-item"><span class="contributor-name">siyu</span></div>
+                    <div class="contributor-item"><span class="contributor-name">rpP6</span></div>
+                    <div class="contributor-item"><span class="contributor-name">蛋炒饭不要放</span></div>
+                    <div class="contributor-item"><span class="contributor-name">wo123123</span></div>
+                    <div class="contributor-item"><span class="contributor-name">Lurenxing</span></div>
+                    <div class="contributor-item"><span class="contributor-name">ZZzzz</span></div>
+                    <div class="contributor-item"><span class="contributor-name">黎明</span></div>
+                    <div class="contributor-item"><span class="contributor-name">Architex</span></div>
+                    <div class="contributor-item"><span class="contributor-name">baiyangovo</span></div>
+                    <div class="contributor-item"><span class="contributor-name">mikaboshi</span></div>
+                    <div class="contributor-item"><span class="contributor-name">Hypæ</span></div>
+                    <div class="contributor-item"><span class="contributor-name">嘿嘿额</span></div>
+                    <div class="contributor-item"><span class="contributor-name">8.chloe.8</span></div>
+                    <div class="contributor-item"><span class="contributor-name">94067</span></div>
+                    <div class="contributor-item"><span class="contributor-name">sAQ4</span></div>
+                    <div class="contributor-item"><span class="contributor-name">Miyako不熬夜</span></div>
+                    <div class="contributor-item"><span class="contributor-name">汪酱www</span></div>
+                    <div class="contributor-item"><span class="contributor-name">薯条大王17117</span></div>
+                    <div class="contributor-item"><span class="contributor-name">萨格三</span></div>
+                    <div class="contributor-item"><span class="contributor-name">夜分</span></div>
+                    <div class="contributor-item"><span class="contributor-name">木木</span></div>
+                    <div class="contributor-item"><span class="contributor-name">yomha2</span></div>
+                    <div class="contributor-item"><span class="contributor-name">ddddwd</span></div>
+                    <div class="contributor-item"><span class="contributor-name">wuyan666</span></div>
+                    <div class="contributor-item"><span class="contributor-name">zhuyun</span></div>
+                    <div class="contributor-item"><span class="contributor-name">白星</span></div>
+                    <div class="contributor-item"><span class="contributor-name">yrYq</span></div>
+                    <div class="contributor-item"><span class="contributor-name">浅梦时光</span></div>
+                    <div class="contributor-item"><span class="contributor-name">Tremble</span></div>
+                    <div class="contributor-item"><span class="contributor-name">cbf001</span></div>
+                    <div class="contributor-item"><span class="contributor-name">kisonoai</span></div>
+                    <div class="contributor-item"><span class="contributor-name">望相识</span></div>
+                    <div class="contributor-item"><span class="contributor-name">xRGQ</span></div>
+                
                 </div>
+                
+                <!-- 展开/收起按钮 -->
+                <div class="mobile-toggle-btn text-center mb-8">
+                    <button id="toggle-contributors" 
+                            onclick="toggleContributors()" 
+                            class="inline-flex items-center px-4 py-2 bg-primary hover:bg-red-700 text-white rounded-lg transition-colors"
+                            aria-expanded="false"
+                            aria-controls="more-contributors"
+                            aria-label="查看更多贡献者">
+                        <span id="toggle-text">查看更多贡献者</span>
+                        <i id="toggle-icon" class="fa fa-chevron-down ml-2" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
 
+        <!-- 捐赠与加入 -->
+        <section id="donation-section" class="mb-3">
+            <div class="bg-light rounded-2xl shadow-lg p-6 md:p-8">
                 <!-- 加入我们 -->
                 <div class="bg-primary/5 rounded-xl p-6 border border-primary/20 border-2 border-red-500">
                     <h3 class="font-bold text-xl mb-4 flex items-center">
@@ -234,10 +521,18 @@
                     <div class="mb-4">
                         <p class="font-medium mb-2">批量获取key：</p>
                         <div class="space-y-2">
-                            <a href="https://discord.com/channels/1134557553011998840/1388829444881256488" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline text-sm block break-all">
+                            <a href="https://discord.com/channels/1134557553011998840/1388829444881256488" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="text-primary hover:underline text-sm block break-all"
+                               aria-label="在新窗口打开Discord频道链接">
                                 https://discord.com/channels/1134557553011998840/1388829444881256488
                             </a>
-                            <a href="https://discord.com/channels/1134557553011998840/1382401165756469410" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline text-sm block break-all">
+                            <a href="https://discord.com/channels/1134557553011998840/1382401165756469410" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="text-primary hover:underline text-sm block break-all"
+                               aria-label="在新窗口打开Discord频道链接">
                                 https://discord.com/channels/1134557553011998840/1382401165756469410
                             </a>
                         </div>
@@ -251,8 +546,14 @@
                             <div class="flex items-center space-x-3">
                                 <i class="fa fa-discord text-primary text-xl"></i>
                                 <span class="font-medium">Discord：</span>
-                                <span id="discord-username" class="text-gray-700">beijixx_90909</span>
-                                <button onclick="copyDiscordUsername()" class="ml-2 px-2 py-1 text-xs font-semibold text-white bg-primary rounded hover:bg-red-700 transition-colors">复制</button>
+                                <span id="discord-username" class="text-gray-700 select-all">beijixx_90909</span>
+                                <button onclick="copyDiscordUsername(event)" 
+                                        class="ml-2 px-2 py-1 text-xs font-semibold text-white bg-primary rounded hover:bg-red-700 transition-colors touch-manipulation"
+                                        aria-label="复制Discord用户名到剪贴板"
+                                        type="button"
+                                        title="点击复制用户名">
+                                    📋 复制
+                                </button>
                             </div>
                             <div class="flex items-center space-x-3">
                                 <i class="fa fa-envelope text-primary text-xl"></i>
@@ -271,60 +572,68 @@
                 </div>
             </div>
         </section>
+
         <!-- 接入方法和咨询指引区合并 -->
-        <section class="mb-16">
+        <section id="tutorial-section" class="mb-3">
             <div class="bg-light rounded-2xl shadow-lg p-6 md:p-8 card-hover">
                 <h2 class="text-2xl font-bold mb-6 flex items-center">
                     <i class="fa fa-plug text-primary mr-3"></i>接入方法与咨询指引
                 </h2>
                 
-                <!-- 接入方法 -->
-                <div class="space-y-4 mb-8">
-                    <div class="flex items-start">
-                        <div class="bg-primary/10 p-2 rounded-full mt-1 mr-4">
-                            <i class="fa fa-code text-primary"></i>
+                <div class="grid md:grid-cols-2 md:gap-8">
+                    <!-- 接入方法 -->
+                    <div class="space-y-4 h-full">
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-2 rounded-full mt-1 mr-4">
+                                <i class="fa fa-code text-primary"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-semibold">API 地址</p>
+                                <code class="bg-gray-100 px-3 py-1 rounded text-sm break-all">
+                                    https://gemini.beijixingxing.com/v1
+                                </code>
+                            </div>
                         </div>
-                        <div class="flex-1">
-                            <p class="font-semibold">API 地址</p>
-                            <code class="bg-gray-100 px-3 py-1 rounded text-sm break-all">
-                                https://gemini.beijixingxing.com/v1
-                            </code>
+                        
+                        <div class="mt-6 p-4 bg-primary/5 rounded-xl border-l-4 border-primary">
+                            <p class="font-medium">使用步骤：</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-1 text-sm">
+                                <li>注册星星人民公益站获取令牌（API密钥）</li>
+                                <li>在SillyTavern中选择OpenAI兼容模式</li>
+                                <li>填入上述API地址和您的令牌（API密钥）</li>
+                                <li>开始使用公益服务</li>
+                            </ol>
                         </div>
                     </div>
                     
-                    <div class="mt-6 p-4 bg-primary/5 rounded-xl border-l-4 border-primary">
-                        <p class="font-medium">使用步骤：</p>
-                        <ol class="list-decimal list-inside mt-2 space-y-1 text-sm">
-                            <li>注册星星人民公益站获取令牌（API密钥）</li>
-                            <li>在SillyTavern中选择OpenAI兼容模式</li>
-                            <li>填入上述API地址和您的令牌（API密钥）</li>
-                            <li>开始使用公益服务</li>
-                        </ol>
-                    </div>
-                </div>
-                
-                <!-- 咨询指引 -->
-                <div class="border-t border-gray-200 pt-6">
-                    <h3 class="text-xl font-bold mb-4 flex items-center">
-                        <i class="fa fa-comments text-secondary mr-3"></i>公益站相关问题咨询
-                    </h3>
-                    <div class="space-y-3">
-                        <p>咨询流程：</p>
-                        <ol class="list-decimal list-inside space-y-1 text-sm">
-                            <li>加入类脑社区Discord</li>
-                            <li>在教程区找到"星星人民公益站"帖子</li>
-                            <li>使用兑换券机器人自动领取额度</li>
-                        </ol>
-                    </div>
-                    
-                    <div class="mt-4 bg-white p-4 rounded-lg border border-gray-200">
-                        <a href="https://discord.gg/kRhaKzMnhX"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="inline-flex items-center text-primary hover:underline font-medium">
-                            <i class="fa fa-external-link mr-2"></i>
-                            点击加入类脑社区Discord
-                        </a>
+                    <!-- 咨询指引 -->
+                    <div class="space-y-4 h-full">
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-2 rounded-full mt-1 mr-4">
+                                <i class="fa fa-comments text-primary"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-semibold">公益站相关问题咨询</p>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4 bg-primary/5 rounded-xl border-l-4 border-primary">
+                            <p class="font-medium">咨询流程：</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-1 text-sm">
+                                <li>加入类脑社区Discord</li>
+                                <li>在教程区找到"星星人民公益站"帖子</li>
+                                <li>额度不足时，在帖内使用公益站机器人每48小时自助领取800次额度</li>
+                            </ol>
+                            <div class="mt-4 pt-4 border-t border-primary/20">
+                                <a href="https://discord.gg/kRhaKzMnhX"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="inline-flex items-center text-primary hover:underline font-medium">
+                                    <i class="fa fa-external-link mr-2"></i>
+                                    点击加入类脑社区Discord
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -332,8 +641,8 @@
         
         <!-- 导师教诲 -->
         <section>
-            <div class="bg-dark text-white rounded-2xl shadow-lg p-6 md:p-8">
-                <h2 class="text-2xl font-bold mb-6 flex items-center">
+            <div class="bg-dark text-white rounded-2xl shadow-lg px-6 py-2 md:px-8 md:py-3">
+                <h2 class="text-2xl font-bold mb-3 flex items-center">
                     <i class="fa fa-quote-left mr-3 opacity-70"></i>导师的教诲，指引我们前进的方向
                 </h2>
                 <blockquote class="text-xl md:text-2xl italic border-l-4 border-yellow-400 pl-6 py-2 mb-4" cite="https://www.marxists.org/">
@@ -353,15 +662,304 @@
     </footer>
 
     <script>
-        function copyDiscordUsername() {
+        // 页面内平滑滚动（升级版，支持更新URL）
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId.length > 1) {
+                    try {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            // 阻止默认的瞬间跳转，用平滑滚动代替
+                            e.preventDefault();
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                            // 关键优化：手动更新URL的hash，以保持正确的历史记录和可分享性
+                            // 使用 pushState 避免页面重载
+                            if(history.pushState) {
+                                history.pushState(null, null, targetId);
+                            } else {
+                                // 降级处理
+                                location.hash = targetId;
+                            }
+                        }
+                    } catch (err) {
+                        console.error("页内滚动失败，无效的选择器:", targetId);
+                    }
+                }
+            });
+        });
+
+        function copyDiscordUsername(event) {
             const username = document.getElementById('discord-username').innerText;
-            navigator.clipboard.writeText(username).then(() => {
-                alert('Discord 用户名已复制到剪贴板！');
-            }, (err) => {
-                console.error('无法复制文本: ', err);
-                alert('复制失败，请手动复制。');
+            const button = event.target;
+            const originalText = button.textContent;
+            
+            // 移动端优化：直接使用fallback方法
+            if (isMobileDevice()) {
+                mobileCopy(username, button, originalText);
+                return;
+            }
+            
+            // 桌面端：尝试现代clipboard API
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(username).then(() => {
+                    showCopySuccess(button, originalText);
+                }, (err) => {
+                    console.error('Clipboard API failed: ', err);
+                    fallbackCopy(username, button, originalText);
+                });
+            } else {
+                // 降级方案
+                fallbackCopy(username, button, originalText);
+            }
+        }
+        
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+                   ('ontouchstart' in window) ||
+                   (navigator.maxTouchPoints > 0);
+        }
+        
+        function mobileCopy(text, button, originalText) {
+            // 移动端专用复制方法
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            
+            // 移动端特殊样式设置
+            textArea.style.position = 'fixed';
+            textArea.style.top = '0';
+            textArea.style.left = '0';
+            textArea.style.width = '2em';
+            textArea.style.height = '2em';
+            textArea.style.padding = '0';
+            textArea.style.border = 'none';
+            textArea.style.outline = 'none';
+            textArea.style.boxShadow = 'none';
+            textArea.style.background = 'transparent';
+            textArea.style.fontSize = '16px'; // 防止iOS缩放
+            textArea.setAttribute('readonly', '');
+            
+            document.body.appendChild(textArea);
+            
+            // 移动端选择和复制
+            textArea.focus();
+            textArea.setSelectionRange(0, 99999);
+            
+            try {
+                const successful = document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                if (successful) {
+                    showCopySuccess(button, originalText);
+                } else {
+                    showMobileAlert(text, button, originalText);
+                }
+            } catch (err) {
+                console.error('Mobile copy failed: ', err);
+                document.body.removeChild(textArea);
+                showMobileAlert(text, button, originalText);
+            }
+        }
+        
+        function showMobileAlert(text, button, originalText) {
+            // 移动端显示文本供用户手动复制
+            const alertMessage = `请手动复制以下内容：\n\n${text}\n\n长按选择文本，然后选择复制`;
+            
+            if (confirm(alertMessage)) {
+                // 用户确认后，创建一个临时显示区域
+                createCopyPrompt(text, button, originalText);
+            } else {
+                showCopyError(button, originalText);
+            }
+        }
+        
+        function createCopyPrompt(text, button, originalText) {
+            // 创建临时的复制提示区域
+            const overlay = document.createElement('div');
+            overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                z-index: 9999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                box-sizing: border-box;
+            `;
+            
+            const promptBox = document.createElement('div');
+            promptBox.style.cssText = `
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+                max-width: 300px;
+                width: 100%;
+            `;
+            
+            promptBox.innerHTML = `
+                <h3 style="margin: 0 0 15px 0; color: #e63946;">复制Discord用户名</h3>
+                <p style="margin: 0 0 15px 0; font-size: 14px; color: #666;">长按下方文本选择并复制：</p>
+                <div style="background: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; font-size: 16px; user-select: all; -webkit-user-select: all; word-break: break-all;">${text}</div>
+                <button id="copy-close-btn" style="margin-top: 15px; padding: 8px 16px; background: #e63946; color: white; border: none; border-radius: 5px; cursor: pointer;">关闭</button>
+            `;
+            
+            overlay.appendChild(promptBox);
+            document.body.appendChild(overlay);
+            
+            // 关闭按钮事件
+            document.getElementById('copy-close-btn').onclick = function() {
+                document.body.removeChild(overlay);
+                showCopySuccess(button, originalText);
+            };
+            
+            // 点击遮罩关闭
+            overlay.onclick = function(e) {
+                if (e.target === overlay) {
+                    document.body.removeChild(overlay);
+                    showCopySuccess(button, originalText);
+                }
+            };
+        }
+        
+        function showCopySuccess(button, originalText) {
+            button.textContent = '已复制';
+            button.className = button.className.replace('bg-primary', 'bg-green-600');
+            button.setAttribute('aria-label', 'Discord用户名已复制到剪贴板');
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.className = button.className.replace('bg-green-600', 'bg-primary');
+                button.setAttribute('aria-label', '复制Discord用户名到剪贴板');
+            }, 2000);
+        }
+        
+        function showCopyError(button, originalText) {
+            button.textContent = '复制失败';
+            button.className = button.className.replace('bg-primary', 'bg-red-600');
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.className = button.className.replace('bg-red-600', 'bg-primary');
+            }, 2000);
+        }
+        
+        function fallbackCopy(text, button, originalText) {
+            // 创建临时textarea元素
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                const result = document.execCommand('copy');
+                document.body.removeChild(textArea);
+                if (result) {
+                    showCopySuccess(button, originalText);
+                } else {
+                    showCopyError(button, originalText);
+                }
+            } catch (err) {
+                console.error('Fallback copy failed: ', err);
+                document.body.removeChild(textArea);
+                showCopyError(button, originalText);
+            }
+        }
+        
+        function toggleContributors() {
+            // 只在移动端执行折叠功能
+            if (window.innerWidth >= 768) {
+                return;
+            }
+            
+            const moreContributors = document.getElementById('more-contributors');
+            const toggleText = document.getElementById('toggle-text');
+            const toggleIcon = document.getElementById('toggle-icon');
+            const toggleButton = document.getElementById('toggle-contributors');
+            
+            if (moreContributors.style.display === 'none' || !moreContributors.style.display) {
+                moreContributors.style.display = 'grid';
+                toggleText.textContent = '收起贡献者';
+                toggleIcon.className = 'fa fa-chevron-up ml-2';
+                toggleButton.setAttribute('aria-expanded', 'true');
+                toggleButton.setAttribute('aria-label', '收起贡献者列表');
+            } else {
+                moreContributors.style.display = 'none';
+                toggleText.textContent = '查看更多贡献者';
+                toggleIcon.className = 'fa fa-chevron-down ml-2';
+                toggleButton.setAttribute('aria-expanded', 'false');
+                toggleButton.setAttribute('aria-label', '查看更多贡献者');
+            }
+        }
+        
+        // 性能优化：防抖函数
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+        
+        // 优化窗口调整大小事件
+        window.addEventListener('resize', debounce(() => {
+            // 窗口大小改变时重新检查显示状态
+            const moreContributors = document.getElementById('more-contributors');
+            if (window.innerWidth >= 768) {
+                moreContributors.style.display = 'grid';
+            }
+        }, 250));
+
+        // 捐赠者按姓名长度排序
+        function sortContributorsByNameLength() {
+            const container = document.querySelector('.bg-with-flag');
+            if (!container) return;
+
+            const allItems = Array.from(container.querySelectorAll('.contributor-item'));
+            
+            // 根据文本内容长度排序
+            allItems.sort((a, b) => a.textContent.trim().length - b.textContent.trim().length);
+
+            // 获取两个列表容器
+            const firstList = container.querySelector('.grid:not(#more-contributors)');
+            const moreList = document.getElementById('more-contributors');
+
+            if (!firstList || !moreList) return;
+
+            // 清空容器
+            firstList.innerHTML = '';
+            moreList.innerHTML = '';
+
+            // 重新追加已排序的项目，保持18个的分割点
+            const splitIndex = 18;
+            allItems.forEach((item, index) => {
+                if (index < splitIndex) {
+                    firstList.appendChild(item);
+                } else {
+                    moreList.appendChild(item);
+                }
             });
         }
+
+        // DOM加载完成后执行排序
+        document.addEventListener('DOMContentLoaded', sortContributorsByNameLength);
+
     </script>
+</div>
 </body>
 </html>
