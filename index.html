@@ -277,8 +277,8 @@
     <!-- 主要内容（初始隐藏） -->
     <div id="main-content" style="display: none;" class="bg-neutral">
     <!-- 顶部横幅 -->
-    <header class="bg-gradient-to-r from-red-600 to-red-800 text-white pt-12 pb-8 px-4 md:px-8"> <!-- 修改背景为红色渐变 -->
-        <div class="max-w-7xl mx-auto text-center">
+    <header class="bg-gradient-to-r from-red-600 to-red-800 text-white px-4 md:px-8 flex flex-col min-h-[40vh]">
+        <div class="max-w-7xl mx-auto text-center flex-grow flex flex-col justify-center pt-20 pb-8">
             <h1 class="text-4xl md:text-5xl font-bold mb-4 text-shadow">
                 <i class="fa fa-star text-yellow-300 mr-2" aria-hidden="true"></i>星星人民公益站
             </h1>
@@ -945,8 +945,8 @@
             firstList.innerHTML = '';
             moreList.innerHTML = '';
 
-            // 重新追加已排序的项目，保持18个的分割点
-            const splitIndex = 18;
+            // 重新追加已排序的项目，保持21个的分割点（适配7列布局）
+            const splitIndex = 21;
             allItems.forEach((item, index) => {
                 if (index < splitIndex) {
                     firstList.appendChild(item);
