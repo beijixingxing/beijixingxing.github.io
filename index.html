@@ -61,7 +61,7 @@
         /* 响应式网格预载 */
         @media (min-width: 640px) { .sm\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
         @media (min-width: 768px) { .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-        @media (min-width: 1024px) { .lg\:grid-cols-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); } }
+        @media (min-width: 1024px) { .lg\:grid-cols-8 { grid-template-columns: repeat(8, minmax(0, 1fr)); } }
     </style>
     
     <!-- 异步加载外部CSS -->
@@ -300,7 +300,7 @@
             
             <!-- 导航栏 -->
             <nav class="mt-12">
-                <div class="flex justify-center space-x-2 md:space-x-8">
+                <div class="flex justify-center flex-wrap gap-2 md:space-x-8">
                     <a href="#tutorial-section" class="bg-white text-blue-600 hover:bg-gray-100 px-4 py-2 md:px-10 md:py-3 rounded-full font-bold transition-colors shadow-md text-sm md:text-base whitespace-nowrap">
                         <i class="fa fa-book mr-2"></i>使用教程
                     </a>
@@ -341,7 +341,7 @@
                         </li>
                         <li class="flex items-start">
                             <i class="fa fa-angle-right mt-1 mr-2"></i>
-                            <span>公益站网址将根据使用情况调整费率，请留意使用额度。</span>
+                            <span>公益站将根据使用情况调整费率，请留意使用额度。</span>
                         </li>
                     </ul>
                 </div>
@@ -392,7 +392,7 @@
                 </h2>
                 <p class="text-slate-600 mb-6">我们向以下无私奉献支持公益事业的朋友们表示诚挚的感谢（排名不分先后）：</p>
                 
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-0">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-0">
                     <!-- 前18个显示的贡献者 -->
                     <div class="contributor-item"><span class="contributor-name">Chloe</span></div>
                     <div class="contributor-item"><span class="contributor-name">AlexBlues</span></div>
@@ -412,11 +412,12 @@
                     <div class="contributor-item"><span class="contributor-name">兔子蛋糕</span></div>
                     <div class="contributor-item"><span class="contributor-name">秃头的后宫梦</span></div>
                     <div class="contributor-item"><span class="contributor-name">尅尅</span></div>
+                    <div class="contributor-item"><span class="contributor-name">YQBB(👊🌀🔥)</span></div>
+
                 </div>
                 
                 <!-- 可展开/收起的剩余贡献者 -->
-                <div id="more-contributors" class="mobile-collapsible grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-0 mb-4">
-                    <div class="contributor-item"><span class="contributor-name">YQBB(👊🌀🔥)</span></div>
+                <div id="more-contributors" class="mobile-collapsible grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-0 mb-4">
                     <div class="contributor-item"><span class="contributor-name">Euruka</span></div>
                     <div class="contributor-item"><span class="contributor-name">烁寒喵</span></div>
                     <div class="contributor-item"><span class="contributor-name">molilili</span></div>
@@ -980,8 +981,8 @@
             firstList.innerHTML = '';
             moreList.innerHTML = '';
 
-            // 重新追加已排序的项目，保持21个的分割点（适配7列布局）
-            const splitIndex = 21;
+            // 重新追加已排序的项目，保持24个的分割点（适配8列布局）
+            const splitIndex = 24;
             allItems.forEach((item, index) => {
                 if (index < splitIndex) {
                     firstList.appendChild(item);
