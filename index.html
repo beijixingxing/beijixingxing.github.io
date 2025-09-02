@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="星星人民公益站 - 人民的AI，依靠人民、为人民！遵循马克思主义教导，让先进生产力工具回归人民。">
+    <meta name="keywords" content="人民AI,公益AI,星星人民,Gemini API,免费AI,马克思主义,人民服务">
+    <meta name="author" content="星星人民公益站">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#e63946">
+    <meta name="robots" content="index, follow">
+    <title>星星人民公益站 — 人民的AI，依靠人民、为人民！</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gemini.beijixingxing.com">
+    <meta property="og:title" content="星星人民公益站 — 人民的AI，依靠人民、为人民！">
+    <meta property="og:description" content="遵循马克思主义教导，让先进生产力工具回归人民。">
+    <meta property="og:image" content="/new_pages/images/公益站.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gemini.beijixingxing.com">
+    <meta property="twitter:title" content="星星人民公益站 — 人民的AI，依靠人民、为人民！">
+    <meta property="twitter:description" content="遵循马克思主义教导，让先进生产力工具回归人民。">
+    <meta property="twitter:image" content="/new_pages/images/公益站.png">
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" as="style">
+    
+    <!-- 引入外部CSS文件 -->
+    <link rel="stylesheet" href="css/style.css">
+        <style>
+        .font-bold { font-weight: 700; }
+        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+        
+        /* 无障碍访问样式 */
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+        
+        /* 移动端复制优化 */
+        .select-all { -webkit-user-select: all; -moz-user-select: all; -ms-user-select: all; user-select: all; }
+        .touch-manipulation { touch-action: manipulation; }
+        
+        /* 响应式网格预载 */
+        @media (min-width: 640px) { .sm\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        @media (min-width: 768px) { .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+        @media (min-width: 1024px) { .lg\:grid-cols-11 { grid-template-columns: repeat(11, minmax(0, 1fr)); } }
+        </style>
+    </style>
+    
+    <!-- 异步加载外部CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet"></noscript>
+    
+    <!-- 延迟加载TailwindCSS -->
+<script>
+    // 延迟加载TailwindCSS，带错误处理
+    function loadTailwind() {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.tailwindcss.com';
+        script.async = true;
+        script.onload = function() {
+            if (window.tailwind) {
+                tailwind.config = {
+                    mode: 'jit',
+                    theme: {
+                        extend: {
+                            colors: {
+                                primary: '#e63946',
+                                secondary: '#e63946',
+                                neutral: '#f1faee',
+                                dark: '#1d3557',
+                                light: '#f8f9fa',
+                            },
+                            fontFamily: {
+                                sans: ['Inter', 'system-ui', 'sans-serif'],
+                            },
+                        }
+                    }
+                };
+            }
+            // 首次加载时，隐藏加载屏并尝试滚动
+            hideLoadingScreenAndScroll();
+        };
+        script.onerror = function() {
+            console.warn('TailwindCSS加载失败，使用基础样式');
+            hideLoadingScreenAndScroll();
+        };
+        document.head.appendChild(script);
+    }
+  
+    // --- 终极跨页锚点滚动解决方案 (V4 - 最终修正) ---
+    function attemptScrollToAnchor() {
+        const hash = window.location.hash;
+        if (!hash || hash.length <= 1) return;
+
+        let attempts = 0;
+        const maxAttempts = 30; // 增加尝试次数至3秒
+        const interval = 100;
+
+        const scroller = setInterval(() => {
+            try {
+                const targetElement = document.querySelector(hash);
+                if (targetElement) {
+                    // 确保元素在视觉上是可交互的
+                    if (targetElement.offsetParent !== null) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        clearInterval(scroller);
+                    } else {
+                        // 元素存在但不可见，继续等待
+                        attempts++;
+                    }
+                } else {
+                    attempts++;
+                }
+
+                if (attempts > maxAttempts) {
+                    clearInterval(scroller);
+                    console.warn(`锚点 '${hash}' 在超时后仍未找到或不可见。`);
+                }
+            } catch (e) {
+                console.error("无效的锚点选择器:", hash);
+                clearInterval(scroller);
+            }
+        }, interval);
+    }
+
+    // 仅用于首次加载的函数
+    function hideLoadingScreenAndScroll() {
+        const loadingScreen = document.getElementById('loading-screen');
+        const mainContent = document.getElementById('main-content');
+        if (loadingScreen && loadingScreen.style.display !== 'none') {
+            loadingScreen.style.display = 'none';
+            mainContent.style.display = 'block';
+
+            // 在下一帧执行滚动，确保DOM渲染完成
+            requestAnimationFrame(attemptScrollToAnchor);
+        }
+    }
+
+    // 监听DOM加载完成事件 (用于首次加载)
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadTailwind);
+    } else {
+        loadTailwind();
+    }
+
+    // 关键修正：监听 pageshow 事件，处理从 bfcache 恢复的场景
+    window.addEventListener('pageshow', (event) => {
+        // event.persisted 为 true 表示页面是从 bfcache 中加载的
+        if (event.persisted) {
+            // 页面从 bfcache 恢复时，内容已显示，加载屏已隐藏。
+            // 我们唯一需要做的就是无条件地、强制地再次尝试滚动。
+            // 直接调用 attemptScrollToAnchor，绕过所有判断。
+            console.log('Page restored from bfcache. Forcing scroll attempt.');
+            requestAnimationFrame(attemptScrollToAnchor);
+        }
+    });
+
+    // 超时保护：仅用于首次加载，防止加载屏卡死
+    setTimeout(hideLoadingScreenAndScroll, 5000);
+</script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .nav-donate-btn {
+                animation: pulse-donate 1.56s infinite ease-in-out;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                background: linear-gradient(145deg, #ef4444, #dc2626);
+                border: 2px solid rgba(255,255,255,0.3);
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.8);
+                position: relative;
+                overflow: hidden;
+                transform-origin: center;
+            }
+            .nav-donate-btn::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, 
+                    transparent, 
+                    rgba(255,255,255,0.6), 
+                    transparent);
+                transition: left 0.7s ease;
+            }
+            .nav-donate-btn:hover::before {
+                left: 100%;
+            }
+            .nav-donate-btn:hover {
+                animation: none;
+                transform: scale(1.2);
+                box-shadow: 0 0 30px 20px rgba(239, 68, 68, 0.7);
+                filter: brightness(1.1);
+            }
+            @keyframes pulse-donate {
+                0% {
+                    transform: scale(1);
+                    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.8);
+                }
+                50% {
+                    transform: scale(1.15);
+                    box-shadow: 0 0 25px 15px rgba(239, 68, 68, 0.6);
+                }
+                100% {
+                    transform: scale(1);
+                    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.8);
+                }
+            }
+            
+            /* 先进导航按钮样式 */
+            .nav-button {
+                position: relative;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                border: 2px solid transparent;
+                background-origin: border-box;
+                background-clip: padding-box, border-box;
+            }
+            
+            .nav-button::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 50%;
+                width: 0;
+                height: 2px;
+                background: linear-gradient(90deg, #e63946, #d63447);
+                transition: all 0.3s ease;
+                transform: translateX(-50%);
+            }
+            
+            .nav-button:hover::after {
+                width: 80%;
+            }
+            
+            /* 渐变背景按钮 */
+            .nav-button.bg-gradient-to-r {
+                background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
+            }
+            
+            /* 移动端导航优化 */
+            @media (max-width: 767px) {
+                .nav-container {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 0.75rem;
+                    padding: 0 1rem;
+                }
+                
+                .nav-button {
+                    min-width: auto;
+                    max-width: none;
+                    padding: 0.75rem 0.5rem;
+                    font-size: 0.8rem;
+                    border-radius: 0.75rem;
+                }
+                
+                .nav-button i {
+                    margin-right: 0.3rem;
+                    font-size: 0.9rem;
+                }
+            }
+            
+            /* 超小屏幕优化 */
+            @media (max-width: 480px) {
+                .nav-container {
+                    grid-template-columns: 1fr;
+                    gap: 0.5rem;
+                }
+                
+                .nav-button {
+                    padding: 0.6rem 0.4rem;
+                    font-size: 0.75rem;
+                }
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            }
+            .contributor-item {
+                display: flex;
+                align-items: center;
+                justify-content: center; /* 水平居中 */
+                padding: 0.5rem 0.25rem; /* 稍微增加水平内边距 */
+                border-radius: 0.5rem;
+                transition: all 0.2s ease;
+                background-color: rgba(255, 255, 255, 0.7); /* 使用带透明度的白色背景 */
+                border: 1px solid rgba(233, 236, 239, 0.5); /* 边框也带一些透明度 */
+                box-sizing: border-box; /* 确保padding包含在宽度内 */
+            }
+            .contributor-item:hover {
+                background-color: #ffffff;
+                transform: translateY(-3px);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                z-index: 10;
+                position: relative;
+            }
+            .contributor-name {
+                font-weight: 600;
+                font-size: 0.9rem; /* 调整字体大小 */
+                color: #343a40;
+                padding: 0 4px; /* 增加水平内边距 */
+                word-break: break-all; /* 强制长单词换行 */
+                line-height: 1.2; /* 为换行文本提供合适的行高 */
+            }
+            .contributor-handle {
+                color: #1a5fb4;
+                font-size: 0.9rem;
+            }
+            .bg-with-flag {
+                position: relative;
+                overflow: hidden;
+                z-index: 0;
+            }
+            .bg-with-flag::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-image: url('https://lsky.beijixingxing.com/i/2025/08/05/6892275c99b1d.jpeg');
+                background-size: cover;
+                background-position: center;
+                opacity: 0.5;
+                z-index: -1;
+            }
+            
+            /* 移动端折叠功能 */
+            @media (max-width: 767px) {
+                .mobile-collapsible {
+                    display: none;
+                }
+                .mobile-toggle-btn {
+                    display: flex;
+                }
+                
+                /* 移动端导航按钮优化 */
+                .nav-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 0.5rem;
+                }
+                
+                .nav-button {
+                    flex: 1;
+                    min-width: 120px;
+                    max-width: 160px;
+                    text-align: center;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+            
+            /* 超小屏幕设备优化 */
+            @media (max-width: 480px) {
+                .nav-container {
+                    gap: 0.25rem;
+                }
+                
+                .nav-button {
+                    min-width: 90px;
+                    max-width: 120px;
+                    padding: 0.4rem 0.6rem;
+                    font-size: 0.8rem;
+                }
+                
+                .nav-button i {
+                    margin-right: 0.2rem;
+                    font-size: 0.8rem;
+                }
+                
+                .nav-button svg {
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 0.2rem;
+                }
+            }
+            
+            /* 极窄屏幕优化 */
+            @media (max-width: 360px) {
+                .nav-container {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+                
+                .nav-button {
+                    min-width: 160px;
+                    max-width: 200px;
+                    width: 100%;
+                }
+            }
+            
+            /* 桌面端显示全部 */
+            @media (min-width: 768px) {
+                .mobile-collapsible {
+                    display: grid !important;
+                }
+                .mobile-toggle-btn {
+                    display: none;
+                }
+                
+                .nav-container {
+                    display: flex;
+                    gap: 1rem;
+                }
+                
+                .nav-button {
+                    flex: none;
+                }
+            }
+        }
+    </style>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>★</text></svg>" type="image/svg+xml">
+</head>
+<body>
+    <!-- 加载屏幕 -->
+    <div id="loading-screen" class="loading" role="status" aria-live="polite">
+        <div class="loading-text">
+            <i style="color: #fbbf24; margin-right: 8px;" aria-hidden="true">★</i>
+            星星人民公益站加载中...
+            <span class="sr-only">页面正在加载，请稍候</span>
+        </div>
+    </div>
+    
+    <!-- 主要内容（初始隐藏） -->
+    <div id="main-content" style="display: none;" class="bg-neutral">
+    <!-- 顶部横幅 -->
+    <header class="bg-gradient-to-r from-red-600 to-red-800 text-white px-4 md:px-8 flex flex-col min-h-[40vh]">
+        <div class="max-w-7xl mx-auto text-center flex-grow flex flex-col justify-center pt-20 pb-8">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-shadow">
+                <i class="fa fa-star text-yellow-300 mr-2" aria-hidden="true"></i>星星人民公益站
+            </h1>
+            <p class="text-xl md:text-2xl opacity-90">人民的AI，依靠人民、为人民！</p>
+            <div class="mt-8 inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
+                <p class="text-sm md:text-base">遵循马克思主义教导，让先进生产力工具回归人民</p>
+            </div>
+            
+            <!-- 先进导航栏 -->
+            <nav class="mt-12">
+                <div class="nav-container">
+                    <a href="#tutorial-section" class="nav-button bg-white text-gray-700 hover:bg-gray-100 px-4 py-3 md:px-6 md:py-4 rounded-xl font-bold transition-all duration-300 shadow-md hover:shadow-xl text-sm md:text-base whitespace-nowrap transform hover:-translate-y-1">
+                        <i class="fa fa-book mr-2"></i>使用教程
+                    </a>
+                    <a href="#donation-section" class="nav-button nav-donate-btn bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 px-4 py-3 md:px-6 md:py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl text-sm md:text-base whitespace-nowrap transform hover:-translate-y-1 animate-pulse">
+                        <i class="fa fa-heart mr-2"></i>捐赠
+                    </a>
+                    <!-- 暂时注释掉凭证捐赠按钮
+                    <a href="new_pages/gemini_cli_tutorial.html" class="nav-button bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 px-4 py-3 md:px-6 md:py-4 rounded-xl font-bold transition-all duration-300 shadow-md hover:shadow-xl text-sm md:text-base whitespace-nowrap transform hover:-translate-y-1">
+                        <i class="fa fa-key mr-2"></i>凭证捐赠
+                    </a>
+                    -->
+                    <a id="google-login-link" href="https://gemini.beijixingxing.com/login" target="_blank" rel="noopener noreferrer" class="nav-button bg-white text-gray-700 hover:bg-gray-100 px-4 py-3 md:px-6 md:py-4 rounded-xl font-bold transition-all duration-300 shadow-md hover:shadow-xl text-sm md:text-base whitespace-nowrap transform hover:-translate-y-1">
+                        <i class="fa fa-sign-in mr-2"></i>登录
+                    </a>
+                    <a href="new_pages/gemini_issues.html" target="_blank" rel="noopener noreferrer" class="nav-button bg-white text-gray-700 hover:bg-gray-100 px-4 py-3 md:px-6 md:py-4 rounded-xl font-bold transition-all duration-300 shadow-md hover:shadow-xl text-sm md:text-base whitespace-nowrap transform hover:-translate-y-1">
+                        <i class="fa fa-question-circle mr-2"></i>常见问题
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="w-full pt-8">
+        <!-- 社区公约区 -->
+        <section class="mb-3">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fa fa-book text-primary mr-3"></i>社区公约与使用准则
+            </h2>
+            <p class="text-gray-600 mb-6">为了维护服务的持续与稳定，确保资源为大家所用，请所有使用者共同遵守以下公约：</p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- 共同维护 -->
+                <div class="bg-light rounded-xl shadow p-4 card-hover">
+                    <div class="flex items-center mb-3">
+                        <i class="fa fa-check-circle text-green-500 text-2xl mr-3"></i>
+                        <h3 class="font-bold text-base">共同维护，发扬共享精神</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right mt-1 mr-2"></i>
+                            <span>本站资源是依靠人民自发捐赠而来的，请大家自觉维护合理使用</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right mt-1 mr-2"></i>
+                            <span>公益站将根据使用情况调整费率，请留意使用额度。</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 行为规范 -->
+                <div class="bg-light rounded-xl shadow p-4 card-hover">
+                    <div class="flex items-center mb-3">
+                        <i class="fa fa-exclamation-triangle text-yellow-500 text-2xl mr-3"></i>
+                        <h3 class="font-bold text-base">行为规范</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right mt-1 mr-2"></i>
+                            <span>严禁将本公益API接入任何以盈利为目的的商业软件</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right mt-1 mr-2"></i>
+                            <span>本公益站因资源有限，严禁任何形式的倒卖或私自外传</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 特别提醒 -->
+                <div class="bg-light rounded-xl shadow p-4 card-hover">
+                    <div class="flex items-center mb-3">
+                        <i class="fa fa-ban text-secondary text-2xl mr-3"></i>
+                        <h3 class="font-bold text-base">特别提醒</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right mt-1 mr-2"></i>
+                            <span>严禁将本站API用于沉浸式翻译等会产生大量高并发请求的程序</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right mt-1 mr-2"></i>
+                            <span>此类行为极易导致Key被封禁，严重影响所有用户的正常使用</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 致谢区 -->
+        <section class="mb-3">
+            <div class="bg-neutral-50 rounded-2xl shadow-lg p-4 md:p-6 bg-with-flag">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fa fa-heart text-secondary mr-3"></i>致谢每一位贡献者
+                </h2>
+                <p id="acknowledgement-text" class="text-slate-600 mb-6">
+                    我们向以下 <span id="donor-total-count" class="text-red-600 font-bold text-xl" data-loading="true">加载中...</span> 位无私奉献支持公益事业的朋友们表示诚挚的感谢（排名不分先后）：
+                </p>
+                
+                <div id="visible-contributors" class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-11 gap-0">
+                    <!-- 捐赠者名单将通过JavaScript动态加载 -->
+                </div>
+                <div id="more-contributors" class="hidden grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-11 gap-0">
+                    <!-- 更多捐赠者将通过JavaScript动态加载 -->
+                </div>
+                
+                <!-- 展开/收起按钮 -->
+                <div class="mobile-toggle-btn text-center mb-8">
+                    <button id="toggle-contributors" 
+                            onclick="toggleContributors()" 
+                            class="inline-flex items-center px-4 py-2 bg-primary hover:bg-red-700 text-white rounded-lg transition-colors"
+                            aria-expanded="false"
+                            aria-controls="more-contributors"
+                            aria-label="查看更多贡献者">
+                        <span id="toggle-text">查看更多贡献者</span>
+                        <i id="toggle-icon" class="fa fa-chevron-down ml-2" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- 捐赠与加入 -->
+        <section id="donation-section" class="mb-3">
+            <div class="bg-light rounded-2xl shadow-lg p-6 md:p-8">
+                <!-- 加入我们 -->
+                <div class="bg-primary/5 rounded-xl p-6 border border-primary/20 border-2 border-red-500">
+                    <h3 class="font-bold text-2xl mb-4 flex items-center">
+                        <i class="fa fa-heartbeat text-primary mr-2"></i>支持我们，为人民的AI添砖加瓦！
+                    </h3>
+
+                    <div class="mt-2 mb-6 text-sm text-red-800 flex items-start p-4 bg-red-100 rounded-lg">
+                        <i class="fa fa-info-circle text-primary mr-3 mt-1 flex-shrink-0"></i>
+                        <div>
+                            <strong>特别声明：</strong>本站坚守公益原则，对所有用户一视同仁。我们不接受任何以获取特殊待遇为目的的捐赠，感谢您的理解与支持。
+                        </div>
+                    </div>
+                    
+                    <p class="mb-4 text-base">公益站的持续运营、服务器的日常维护与性能升级，离不开大家的慷慨捐赠。</p>
+<p class="mb-4 text-base">您的每一份支持，都是 “人民 AI” 事业向前推进的重要力量，更是对技术普惠理念的坚定认可。</p>
+<p class="mb-4 text-base">我们诚挚邀请更多志同道合的朋友加入，携手共建，让人民 AI 的价值持续发光！</p>
+                    
+                    
+                    <!-- 新版并排布局 -->
+                    <div class="flex flex-col md:flex-row gap-4 mt-6">
+                        <!-- 捐赠价值展示 -->
+                        <div class="flex-1 p-4 bg-primary/5 rounded-lg">
+                            <h4 class="font-bold mb-2">您的支持将直接用于：</h4>
+                            <ul class="space-y-1 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fa fa-server text-primary mr-2 mt-1"></i>
+                                    <span>服务器性能升级（当前承载日均20万+请求）</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-wrench text-primary mr-2 mt-1"></i>
+                                    <span>公益站的日常维护与稳定性保障</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-code text-primary mr-2 mt-1"></i>
+                                    <span>新功能开发与体验优化</span>
+                                </li>
+                            </ul>
+                            <p class="mt-3 text-sm">
+                                已有 <strong id="donor-count" class="text-red-600 text-lg" data-loading="true">加载中...</strong> 位贡献者共同维护
+                            </p>
+                        </div>
+
+                        <!-- 捐赠方式 -->
+                        <div class="flex-1 p-4 bg-primary/5 rounded-lg">
+                            <h4 class="font-bold mb-3">支持方式：</h4>
+                            <div class="space-y-3">
+                                <a href="mailto:beijixingxing02@gmail.com" 
+                                   class="flex items-center justify-center gap-2 bg-white text-primary border border-primary/20 rounded-lg px-4 py-2 hover:bg-primary/5 transition-colors">
+                                    <i class="fa fa-envelope"></i>
+                                    <span>捐赠API Key</span>
+                                </a>
+                                <a href="https://afdian.com/a/beijixingxing" 
+                                   target="_blank"
+                                    class="flex items-center justify-center gap-2 bg-primary text-white rounded-lg px-4 py-2 hover:bg-primary/90 transition-colors transform hover:scale-105 animate-pulse-scale">
+                                    <i class="fa fa-bolt"></i>
+                                    <span>爱发电支持</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+
+        <!-- 接入方法和咨询指引区合并 -->
+        <section id="tutorial-section" class="mb-3">
+            <div class="bg-light rounded-2xl shadow-lg p-6 md:p-8 card-hover">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fa fa-plug text-primary mr-3"></i>接入方法与咨询指引
+                </h2>
+                
+                <div class="grid md:grid-cols-2 md:gap-8">
+                    <!-- 接入方法 -->
+                    <div class="space-y-4 h-full">
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-2 rounded-full mt-1 mr-4">
+                                <i class="fa fa-code text-primary"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-semibold">API 地址</p>
+                                <code class="bg-gray-100 px-3 py-1 rounded text-sm break-all">
+                                    https://gemini.beijixingxing.cn/v1
+                                </code>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 p-4 bg-primary/5 rounded-xl border-l-4 border-primary">
+                            <p class="font-medium">使用步骤：</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-1 text-sm">
+                                <li>注册星星人民公益站获取令牌（API密钥）</li>
+                                <li>在API渠道中选择OpenAI兼容模式</li>
+                                <li>填入上述API地址和您的令牌（API密钥）</li>
+                                <li>开始使用公益服务</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <!-- 咨询指引 -->
+                    <div class="space-y-4 h-full">
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-2 rounded-full mt-1 mr-4">
+                                <i class="fa fa-comments text-primary"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-semibold">公益站相关问题咨询</p>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4 bg-primary/5 rounded-xl border-l-4 border-primary">
+                            <p class="font-medium">咨询/额度领取流程：</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-1 text-sm">
+                                <li>加入类脑社区Discord</li>
+                                <li>在教程区找到"星星人民公益站"帖子进行咨询</li>
+                                <li>额度不足时，在答疑区或星星人民公益站帖内使用指令 /公益站 自助领取兑换券</li>
+                                <li>在公益站网站钱包里添加兑换券兑换额度</li>
+                            </ol>
+                            <div class="mt-4 pt-4 border-t border-primary/20">
+                                <a href="https://discord.gg/kRhaKzMnhX"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="inline-flex items-center text-primary hover:underline font-medium">
+                                    <i class="fa fa-external-link mr-2"></i>
+                                    点击加入类脑社区Discord
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 导师教诲 -->
+        <section>
+            <div class="bg-dark text-white rounded-2xl shadow-lg px-6 py-1 md:px-8 md:py-2">
+                <h2 class="text-2xl font-bold mb-3 flex items-center">
+                    <i class="fa fa-quote-left mr-3 opacity-70"></i>导师的教诲，指引我们前进的方向
+                </h2>
+                <blockquote class="text-xl md:text-2xl italic border-l-4 border-yellow-400 pl-6 py-2 mb-4" cite="https://www.marxists.org/">
+                    "生产力归人民所有时，技术才能消灭异化。"
+                </blockquote>
+                <p class="text-right opacity-80">— 卡尔·马克思《德意志意识形态》</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white/70 py-8 px-4 mt-12">
+        <div class="max-w-5xl mx-auto text-center text-sm">
+            <p>星星人民公益站 © 2025 - 人民的AI，为人民服务</p>
+            <p class="mt-2">遵循马克思主义教导，打破技术垄断，让先进生产力服务于最广大劳动人民</p>
+        </div>
+    </footer>
+
+    <script>
+        // 页面内平滑滚动（升级版，支持更新URL）
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId.length > 1) {
+                    try {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            // 阻止默认的瞬间跳转，用平滑滚动代替
+                            e.preventDefault();
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                            // 关键优化：手动更新URL的hash，以保持正确的历史记录和可分享性
+                            // 使用 pushState 避免页面重载
+                            if(history.pushState) {
+                                history.pushState(null, null, targetId);
+                            } else {
+                                // 降级处理
+                                location.hash = targetId;
+                            }
+                        }
+                    } catch (err) {
+                        console.error("页内滚动失败，无效的选择器:", targetId);
+                    }
+                }
+            });
+        });
+
+        
+        function updateDonorViewState() {
+            const morePart = document.getElementById('more-contributors');
+            const toggleBtn = document.getElementById('toggle-contributors');
+            if (!morePart || !toggleBtn) return;
+
+            if (window.innerWidth >= 768) {
+                // Desktop view: always expand, hide button
+                morePart.classList.remove('hidden');
+                toggleBtn.style.display = 'none';
+            } else {
+                // Mobile view: restore button visibility based on content
+                if (morePart.children.length > 0) {
+                    toggleBtn.style.display = 'inline-flex';
+                } else {
+                    toggleBtn.style.display = 'none';
+                }
+            }
+        }
+
+        function toggleContributors() {
+            const morePart = document.getElementById('more-contributors');
+            const toggleText = document.getElementById('toggle-text');
+            const toggleIcon = document.getElementById('toggle-icon');
+            if (!morePart || !toggleText || !toggleIcon) return;
+
+            const isHidden = morePart.classList.toggle('hidden');
+            toggleText.textContent = isHidden ? '查看更多贡献者' : '收起贡献者';
+            toggleIcon.className = isHidden ? 'fa fa-chevron-down ml-2' : 'fa fa-chevron-up ml-2';
+        }
+
+        // 性能优化：防抖函数
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // 优化窗口调整大小事件
+        window.addEventListener('resize', debounce(updateDonorViewState, 250));
+
+        // 页面加载时，也需要检查一次状态
+        document.addEventListener('DOMContentLoaded', updateDonorViewState);
+
+    </script>
+    
+    <!-- 性能监控脚本 -->
+    <script src="js/modules/performance/resource-tracker.js"></script>
+    <!-- 捐赠者名单脚本 -->
+    <script src="js/donors.js"></script>
+</div>
+
+</html>

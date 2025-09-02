@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 安全相关meta标签 -->
+    <meta name="description" content="星星人民公益站常见问题 - 为您整理了使用中可能遇到的问题、原因及解决方案">
+    <meta name="keywords" content="星星人民公益站,常见问题,FAQ,Gemini,AI帮助">
+    <meta name="author" content="星星人民公益站">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; img-src 'self' data: https:; style-src 'self' 'unsafe-inline';">
+    <meta name="theme-color" content="#B71C1C">
+    
+    <title>星星人民公益站常见问题</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cn.beijixingxing.com/new_pages/gemini_issues.html">
+    <meta property="og:title" content="星星人民公益站常见问题">
+    <meta property="og:description" content="为您整理了使用中可能遇到的问题、原因及解决方案">
+    <meta property="og:image" content="https://cn.beijixingxing.com/new_pages/images/公益站.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cn.beijixingxing.com/new_pages/gemini_issues.html">
+    <meta property="twitter:title" content="星星人民公益站常见问题">
+    <meta property="twitter:description" content="为您整理了使用中可能遇到的问题、原因及解决方案">
+    <meta property="twitter:image" content="https://cn.beijixingxing.com/new_pages/images/公益站.png">
+
+    <style>
+        :root {
+            --primary-color: #B71C1C;
+            --background-gradient: linear-gradient(135deg, #A21616 0%, #C8102E 100%);
+            --card-background: #ffffff;
+            --text-color: #333;
+            --heading-color: #B71C1C; /* 统一问题颜色为红色 */
+            --border-color: #e0e0e0;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --question-bg: #ffffff;
+            --warning-bg: #FFF9C4;
+            --warning-border: #FBC02D;
+            --warning-text: #795548;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            background: var(--background-gradient);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2rem;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        .page-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 600px;
+            margin: 0.5rem auto 0 auto;
+        }
+        .main-container {
+            max-width: 1800px;
+            margin: auto;
+        }
+        .grid-container {
+            display: grid;
+            gap: 1.25rem;
+            grid-template-columns: 1fr;
+        }
+        @media (min-width: 640px) { .grid-container { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 960px) { .grid-container { grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 1280px) { .grid-container { grid-template-columns: repeat(5, 1fr); } }
+
+        .faq-category {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin: 2rem 0;
+        }
+        .faq-category::before, .faq-category::after {
+            content: '';
+            flex: 1;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+        }
+        .faq-category:not(:empty)::before { margin-right: 1em; }
+        .faq-category:not(:empty)::after { margin-left: 1em; }
+
+        .faq-item {
+            background: var(--card-background);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            overflow: hidden;
+        }
+        .faq-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px var(--shadow-color);
+        }
+        .faq-question {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            background-color: var(--question-bg);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.6rem 1rem;
+        }
+        .faq-question::before {
+            content: 'Q';
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .faq-answer {
+            padding: 0.4rem 1rem 0.8rem;
+        }
+        .faq-item > img + .faq-answer {
+            padding-top: 1rem;
+        }
+        .faq-item__header-image {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid var(--border-color);
+        }
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            background-color: #FFEBEE;
+            color: #C62828;
+            font-weight: 600;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            border: 1px solid #FFCDD2;
+            word-break: break-all;
+        }
+        .faq-answer p { margin: 0 0 0.75rem 0; }
+        .faq-answer p:last-child { margin-bottom: 0; }
+        .faq-answer strong { color: var(--heading-color); font-weight: 700; }
+        blockquote {
+            grid-column: 1 / -1;
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning-border);
+            margin: 0 0 2rem 0;
+            padding: 1.25rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+        blockquote h4 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: var(--warning-text);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        blockquote ul {
+            padding-left: 20px;
+            list-style-type: '💡';
+            margin: 0;
+        }
+        blockquote li {
+            padding-left: 10px;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        blockquote li::marker { color: var(--warning-border); }
+
+        .page-nav {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .page-nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: text-decoration 0.2s ease;
+        }
+        .page-nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container" style="margin-top: 60px;">
+        <div class="header">
+            <h1 class="page-title">★ 星星人民公益站常见问题</h1>
+            <p class="page-subtitle">为您整理了使用中可能遇到的问题、原因及解决方案</p>
+        </div>
+
+        <nav class="page-nav">
+            <a href="../index.html">首页</a>
+            <a href="../index.html#donation-section">捐赠</a>
+            <a href="../index.html#tutorial-section">使用教程</a>
+        </nav>
+
+        <div class="grid-container">
+            <blockquote>
+                <h4><strong>重要提示：开始之前</strong></h4>
+                <ul>
+                    <li><strong>创建令牌</strong>：请务必勾选 <strong>无限额度</strong>。</li>
+                    <li><strong>令牌分组</strong>：建议选择 <strong>默认分组</strong>，如遇问题可尝试切换其他分组。</li>
+                    <li><strong>登录问题</strong>：若无法登录，请尝试 <strong>更换浏览器、清空缓存、使用无痕模式或切换网络节点</strong>。</li>
+                    <li><strong>额度用尽</strong>：请访问首页底部公告，在 <strong>类脑社区-教程区-星星人民公益站</strong> 自助领取。</li>
+                    <li><strong>SillyTavern请务必打开流式</strong></li>
+                </ul>
+            </blockquote>
+
+            <h2 class="faq-category">🌐 网络与节点相关</h2>
+            <div class="faq-item">
+                <h3 class="faq-question">internal server error</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: 网络环境不稳定。</p>
+                    <p><strong>操作</strong>: 更换 VPN 节点，或将代理工具开启全局/TUN 模式。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">bad request</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: 网络请求配置错误。</p>
+                    <p><strong>操作</strong>: 更换网络节点，或将代理工具开启全局/TUN 模式。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">User location is not supported</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: IP 地址被 Google API 明确限制。</p>
+                    <p><strong>操作</strong>: 更换 IP 地址，或尝试使用 WARP 等工具。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">429 : too many requests</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: 单位时间内请求次数过于频繁。</p>
+                    <p><strong>操作</strong>: <strong>请等待片刻</strong> 后再试。此问题也可能与 <code>main prompt被标记</code> 相关，可一并排查。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <img class="faq-item__header-image" src="images/服务器拒绝了 API 请求.jpg" alt="服务器拒绝了 API 请求" loading="lazy">
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: 禁止访问，服务器拒绝了 API 请求。</p>
+                    <p><strong>操作</strong>: 尝试关闭代理或切换节点。</p>
+                </div>
+            </div>
+
+            <h2 class="faq-category">📝 内容与审核相关</h2>
+            <div class="faq-item">
+                <h3 class="faq-question">API returned an error Unknown error</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: 非流式输出的响应时间超过2分钟，导致连接中断。</p>
+                    <p><strong>操作</strong>: 在设置中 <strong>调低单次回复的最大字数</strong>，或 <strong>开启流式传输</strong>。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">API returned an error No candidates</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: 请求被拒绝但未返回明确原因。</p>
+                    <p><strong>操作</strong>: 更换网络节点或修改 Prompt 预设后重试 (Roll)。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">400 / Got response status 400</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: 内容审核设置中存在无效参数，触发原因较为随机。</p>
+                    <p><strong>操作</strong>: 若在 OpenRouter 中使用 Gemini，尝试将预设中的“频率惩罚”和“存在惩罚”参数均设置为 <code>0</code>。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">PROHIBITED_CONTENT</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: Prompt 或对话内容触发了安全策略。</p>
+                    <p><strong>操作</strong>: <strong>更换 Prompt 预设</strong> 或 <strong>开启新的对话</strong>。若问题复现，可能是角色卡本身的设计存在问题。</p>
+                </div>
+            </div>
+
+            <h2 class="faq-category">🚀 模型与请求相关</h2>
+            <div class="faq-item">
+                <h3 class="faq-question">No candidates returned: code 500</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: Prompt 预设的“破限”力度不足，内容被内部拦截。</p>
+                    <p><strong>操作</strong>: 更换一个“破限”能力更强的 Prompt 预设。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">404 not found</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: API 请求中指定的模型名称错误。</p>
+                    <p><strong>操作</strong>: 检查设置，选择正确的 Gemini 模型。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">429 : main prompt 被标记</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: 主要提示词 (Main Prompt) 因重复或内容问题被暂时限制。</p>
+                    <p><strong>操作</strong>: 尝试 <strong>更换 Prompt 预设</strong>，或 <strong>修改主要提示词</strong>。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">500 server_error</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: 上下文过长超出模型限制，或 Google 服务器内部错误。</p>
+                    <p><strong>操作</strong>: 尝试切换到 <code>gemini-pro-flash</code>。若问题依旧，可能是 Google 服务器暂时性故障。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">503 / SERVICE UNAVAILABLE</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: Google 服务器当前不可用或负载过高。</p>
+                    <p><strong>操作</strong>: 这是服务端问题，无法由用户解决，<strong>请耐心等待</strong>。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">504 Gateway Time-out</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: 服务器网关响应超时。</p>
+                    <p><strong>操作</strong>: <strong>开启流式传输</strong>。若无效，可能是 Google 的服务节点出现问题。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <img class="faq-item__header-image" src="images/服务器连接超时.jpg" alt="连接超时" loading="lazy">
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: 报错码524即客户端向服务器发起请求后，服务器未能在规定时间内响应，连接超时了。</p>
+                    <p><strong>操作</strong>: 令牌分组选择假流式分组，SillyTavern预设开启流式传输功能。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <img class="faq-item__header-image" src="images/You_exceeded.png" alt="You exceeded your current quota error" loading="lazy">
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: 上下文超出模型上限或超出当前配额。</p>
+                    <p><strong>操作</strong>: 缩短上下文，可使用记忆表格、总结，或检查您的计划和账单详情。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <img class="faq-item__header-image" src="images/额度不足.png" alt="额度不足">
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: 公益站额度不足。</p>
+                    <p><strong>操作</strong>: 使用兑换券机器人进行自助领取额度。</p>
+                </div>
+            </div>
+
+            <h2 class="faq-category">⚙️ 其他特殊问题</h2>
+            <div class="faq-item">
+                <h3 class="faq-question">中文回复中出现外语</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: Gemini 多语言模型在特定场景下的固有特性。</p>
+                    <p><strong>操作</strong>: <strong>立即删除</strong> 包含外语的回复并重新生成 (Roll)。这至关重要，能避免污染后续的对话上下文。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">空回复 / 截断</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: Prompt 预设的“破限”能力不足。</p>
+                    <p><strong>操作</strong>: 更换一个效果更好的 Prompt 预设。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Candidate text empty</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: 输入内容被截断。</p>
+                    <p><strong>操作</strong>: 在 Prompt 预设中，寻找并开启 <strong>“防输入截断”</strong> 相关的条目，或更换预设。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">stream processing panic</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: 流式处理时发生未知错误。</p>
+                    <p><strong>操作</strong>: <strong>关闭流式传输</strong>，然后尝试空回复一次，再更换 Prompt 预设。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Server disconnected</h3>
+                <div class="faq-answer">
+                    <p><strong>成因</strong>: 后端响应时间过长，超过了前端（如酒馆）的等待阈值。</p>
+                    <p><strong>操作</strong>: 请在令牌设置选择假流式分组，并且请在SillyTavern设置中 <strong>开启流式传输</strong>。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
